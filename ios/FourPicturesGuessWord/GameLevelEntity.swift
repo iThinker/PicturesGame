@@ -33,11 +33,11 @@ class GameLevelEntity {
     var solutionWord: String!
     
     var hasFreeInput: Bool {
-        return true
+        return self.inputLetters.first(where: { $0.isEmpty == true }) != nil
     }
     
     var isComplete: Bool {
-        return false
+        return self.solutionWord == self.inputWord
     }
     
     func append(_ letter: Letter) {
@@ -54,6 +54,10 @@ class GameLevelEntity {
     func remove(_ inputLetter: InputLetter) {
         inputLetter.letter?.selected = false
         inputLetter.letter = nil
+    }
+    
+    fileprivate var inputWord: String {
+        return self.inputLetters.flatMap { $0.letter }.map { String($0.character) }.reduce("", +)
     }
     
 }
