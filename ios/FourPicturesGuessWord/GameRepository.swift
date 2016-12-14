@@ -10,8 +10,14 @@ import UIKit
 
 class GameRepository {
 
+    static var game: GameEntity = GameEntity()
+    
     func save(_ game: GameEntity) {
-        
+        GameRepository.game = game
+    }
+    
+    func get() -> GameEntity {
+        return GameRepository.game
     }
     
 }

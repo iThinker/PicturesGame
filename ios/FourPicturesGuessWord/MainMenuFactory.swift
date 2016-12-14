@@ -29,7 +29,9 @@ class MainMenuFactory {
     }
     
     func mainMenuRouter() -> MainMenuRouter {
-        return MainMenuRouter()
+        let router = MainMenuRouter()
+        
+        return router
     }
     
 }
