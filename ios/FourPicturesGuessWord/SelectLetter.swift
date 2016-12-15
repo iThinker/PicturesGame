@@ -22,7 +22,7 @@ class SelectLetter {
     func select(_ letter: GameLevelEntity.Letter) -> Result {
         let game = self.repository.get()
         let level = game.currentLevel!
-        assert(level.isComplete == false)
+        assert(level.isSolved == false)
         
         if level.hasFreeInput == false {
             return .failureNoSpace
@@ -31,7 +31,7 @@ class SelectLetter {
         level.append(letter)
         self.repository.save(game)
         
-        if level.isComplete {
+        if level.isSolved {
             return .levelComplete
         }
         

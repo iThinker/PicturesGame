@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328B1E00DE5600D89E9E /* SelectLetter.swift */; };
 		BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */; };
+		BF1D5F551E024DFD00850BAB /* stub0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F531E024DFD00850BAB /* stub0.png */; };
+		BF1D5F561E024DFD00850BAB /* stub1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F541E024DFD00850BAB /* stub1.jpeg */; };
 		BFC6C80B1DFE2A5C0099CB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6C80A1DFE2A5C0099CB00 /* AppDelegate.swift */; };
 		BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */; };
 		BFC6C8151DFE2A5C0099CB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C8131DFE2A5C0099CB00 /* LaunchScreen.storyboard */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		BF05328B1E00DE5600D89E9E /* SelectLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLetter.swift; sourceTree = "<group>"; };
 		BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInputLetter.swift; sourceTree = "<group>"; };
+		BF1D5F531E024DFD00850BAB /* stub0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub0.png; path = Resources/Stubs/stub0.png; sourceTree = SOURCE_ROOT; };
+		BF1D5F541E024DFD00850BAB /* stub1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stub1.jpeg; path = Resources/Stubs/stub1.jpeg; sourceTree = SOURCE_ROOT; };
 		BFC6C8071DFE2A5C0099CB00 /* FourPicturesGuessWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourPicturesGuessWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC6C80A1DFE2A5C0099CB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF1D5F521E024D9C00850BAB /* Stub Images */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D5F531E024DFD00850BAB /* stub0.png */,
+				BF1D5F541E024DFD00850BAB /* stub1.jpeg */,
+			);
+			name = "Stub Images";
+			sourceTree = "<group>";
+		};
 		BFC6C7FE1DFE2A5C0099CB00 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 		BFC6C81E1DFE2D9D0099CB00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF1D5F521E024D9C00850BAB /* Stub Images */,
 				BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -298,6 +312,8 @@
 			files = (
 				BFC6C8151DFE2A5C0099CB00 /* LaunchScreen.storyboard in Resources */,
 				BFC6C82E1DFE33330099CB00 /* MainMenuViewController.xib in Resources */,
+				BF1D5F551E024DFD00850BAB /* stub0.png in Resources */,
+				BF1D5F561E024DFD00850BAB /* stub1.jpeg in Resources */,
 				BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

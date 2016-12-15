@@ -31,12 +31,13 @@ class GameLevelEntity {
     var availableLetters: [Letter]!
     var inputLetters: [InputLetter]!
     var solutionWord: String!
+    var images: [String]!
     
     var hasFreeInput: Bool {
         return self.inputLetters.first(where: { $0.isEmpty == true }) != nil
     }
     
-    var isComplete: Bool {
+    var isSolved: Bool {
         return self.solutionWord == self.inputWord
     }
     

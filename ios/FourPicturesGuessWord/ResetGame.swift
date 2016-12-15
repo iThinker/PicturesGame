@@ -14,6 +14,7 @@ class ResetGame {
     
     func reset() {
         let game = GameEntity()
+        game.currentLevel = repository.getLevel(at: 0)
         self.repository.save(game)
     }
     
