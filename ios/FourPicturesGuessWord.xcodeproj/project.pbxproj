@@ -11,6 +11,8 @@
 		BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */; };
 		BF1D5F551E024DFD00850BAB /* stub0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F531E024DFD00850BAB /* stub0.png */; };
 		BF1D5F561E024DFD00850BAB /* stub1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F541E024DFD00850BAB /* stub1.jpeg */; };
+		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
+		BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD31E038D25006EAACE /* SaveGame.swift */; };
 		BFC6C80B1DFE2A5C0099CB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6C80A1DFE2A5C0099CB00 /* AppDelegate.swift */; };
 		BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */; };
 		BFC6C8151DFE2A5C0099CB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC6C8131DFE2A5C0099CB00 /* LaunchScreen.storyboard */; };
@@ -33,6 +35,8 @@
 		BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInputLetter.swift; sourceTree = "<group>"; };
 		BF1D5F531E024DFD00850BAB /* stub0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub0.png; path = Resources/Stubs/stub0.png; sourceTree = SOURCE_ROOT; };
 		BF1D5F541E024DFD00850BAB /* stub1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stub1.jpeg; path = Resources/Stubs/stub1.jpeg; sourceTree = SOURCE_ROOT; };
+		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
+		BFC10AD31E038D25006EAACE /* SaveGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGame.swift; sourceTree = "<group>"; };
 		BFC6C8071DFE2A5C0099CB00 /* FourPicturesGuessWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourPicturesGuessWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC6C80A1DFE2A5C0099CB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +74,13 @@
 				BF1D5F541E024DFD00850BAB /* stub1.jpeg */,
 			);
 			name = "Stub Images";
+			sourceTree = "<group>";
+		};
+		BFC10ACF1E038ACD006EAACE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BFC6C7FE1DFE2A5C0099CB00 = {
@@ -198,6 +209,7 @@
 		BFC6C8341DFE3E790099CB00 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				BFC10ACF1E038ACD006EAACE /* View */,
 				BFC6C8461DFFA1C60099CB00 /* Presenter */,
 				BFC6C83F1DFE3FA00099CB00 /* Factory */,
 				BFC6C83C1DFE3EE60099CB00 /* Entity */,
@@ -213,6 +225,8 @@
 				BFC6C8361DFE3EA40099CB00 /* ResetGame.swift */,
 				BF05328B1E00DE5600D89E9E /* SelectLetter.swift */,
 				BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */,
+				BFC10AD01E038CB2006EAACE /* GetGame.swift */,
+				BFC10AD31E038D25006EAACE /* SaveGame.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -327,9 +341,11 @@
 			files = (
 				BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */,
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
+				BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */,
 				BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */,
 				BFC6C8371DFE3EA40099CB00 /* ResetGame.swift in Sources */,
 				BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */,
+				BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */,
 				BFC6C83B1DFE3EDD0099CB00 /* GameRepository.swift in Sources */,
 				BFC6C82D1DFE33330099CB00 /* MainMenuViewController.swift in Sources */,
 				BFC6C8301DFE33560099CB00 /* MainMenuPresenter.swift in Sources */,

@@ -11,16 +11,18 @@ import Foundation
 class SelectLetter {
     
     enum Result {
-        case success
-        case successWrongWord
+        case success(GameLevelEntity.InputLetter)
+        case successWrongWord(GameLevelEntity.InputLetter)
         case failureNoSpace
-        case levelComplete
+        case levelComplete(GameLevelEntity.InputLetter)
     }
     
-    var repository: GameRepository!
+    
+    var getGame: GetGame!
+    var saveGame: SaveGame!
     
     func select(_ letter: GameLevelEntity.Letter) -> Result {
-        let game = self.repository.get()
+        let game = self.getGame.get()
         let level = game.currentLevel!
         assert(level.isSolved == false)
         
@@ -28,18 +30,18 @@ class SelectLetter {
             return .failureNoSpace
         }
         
-        level.append(letter)
-        self.repository.save(game)
+        let result = level.append(letter)
+        self.saveGame.save(game)
         
         if level.isSolved {
-            return .levelComplete
+            return .levelComplete(result)
         }
         
         if level.hasFreeInput == false {
-            return .successWrongWord
+            return .successWrongWord(result)
         }
         
-        return .success
+        return .success(result)
     }
     
 }

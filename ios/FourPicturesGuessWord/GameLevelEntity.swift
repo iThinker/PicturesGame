@@ -41,20 +41,23 @@ class GameLevelEntity {
         return self.solutionWord == self.inputWord
     }
     
-    func append(_ letter: Letter) {
+    func append(_ letter: Letter) -> InputLetter {
         assert(self.hasFreeInput == true)
+        letter.selected = true
         for inputLetter in self.inputLetters {
             if inputLetter.isEmpty {
                 inputLetter.letter = letter
-                break
+                return inputLetter
             }
         }
-        letter.selected = true
+        fatalError()
     }
     
-    func remove(_ inputLetter: InputLetter) {
+    func remove(_ inputLetter: InputLetter) -> Letter? {
+        let letter = inputLetter.letter
         inputLetter.letter?.selected = false
         inputLetter.letter = nil
+        return letter
     }
     
     fileprivate var inputWord: String {

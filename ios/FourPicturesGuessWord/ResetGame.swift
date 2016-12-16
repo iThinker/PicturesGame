@@ -11,11 +11,12 @@ import UIKit
 class ResetGame {
 
     var repository: GameRepository!
+    var saveGame: SaveGame!
     
     func reset() {
         let game = GameEntity()
-        game.currentLevel = repository.getLevel(at: 0)
-        self.repository.save(game)
+        game.currentLevel = self.repository.getLevel(at: 0)
+        self.saveGame.save(game)
     }
     
 }

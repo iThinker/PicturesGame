@@ -10,15 +10,18 @@ import Foundation
 
 class SelectInputLetter {
     
-    var repository: GameRepository!
+    var getGame: GetGame!
+    var saveGame: SaveGame!
     
-    func select(_ inputLetter: GameLevelEntity.InputLetter) {
-        let game = self.repository.get()
+    func select(_ inputLetter: GameLevelEntity.InputLetter) -> GameLevelEntity.Letter? {
+        let game = self.getGame.get()
         let level = game.currentLevel
         
-        level?.remove(inputLetter)
+        let result = level?.remove(inputLetter)
         
-        self.repository.save(game)
+        self.saveGame.save(game)
+        
+        return result
     }
     
 }
