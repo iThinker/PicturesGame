@@ -15,6 +15,7 @@ class MainMenuViewController: UIViewController, MainMenuPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.presenter.presentable = self
         self.presenter.startPresentation()
     }
     

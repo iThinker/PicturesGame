@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol GamePresentable {
+protocol GamePresentable: class {
     func show(_ presentableModel: GamePresenter.PresentableModel)
     func showNoInputSpaceLeft()
     func showLevelComplete()
@@ -37,8 +37,8 @@ class GamePresenter {
     func startPresentation() {
         let game = self.getGame.get()
         let level = game.currentLevel!
-        let presentableModel = PresentableModel()
-        presentableModel.images = level.images.map({ UIImage(named: $0)! })
+        self.presentableModel = PresentableModel()
+        self.presentableModel.images = level.images.map({ UIImage(named: $0)! })
         self.updatePresentableModel(with: level)
         self.presentable.show(presentableModel)
     }
@@ -68,6 +68,10 @@ class GamePresenter {
         if let letter = result {
             self.presentable.showInputLetterRemoved(inputLetter, letter: letter)
         }
+    }
+    
+    func advanceToNextLevel() {
+        
     }
     
     //MARK: Private

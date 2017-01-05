@@ -12,26 +12,18 @@ class MainMenuFactory {
     static let shared = MainMenuFactory()
     
     func mainMenuViewController() -> MainMenuViewController {
-        let vc = MainMenuViewController()
+        let viewController = MainMenuViewController()
         let presenter = self.mainMenuPresenter()
-        vc.presenter = presenter
-        presenter.presentable = vc
+        viewController.presenter = presenter
         
-        return vc
+        return viewController
     }
     
     func mainMenuPresenter() -> MainMenuPresenter {
         let presenter = MainMenuPresenter()
-        presenter.router = self.mainMenuRouter()
         presenter.resetGame = GameFactory.shared.resetGameInteractor()
         
         return presenter
-    }
-    
-    func mainMenuRouter() -> MainMenuRouter {
-        let router = MainMenuRouter()
-        
-        return router
     }
     
 }

@@ -10,8 +10,11 @@ import UIKit
 
 class MainMenuRouter {
     
+    var navigationController: UINavigationController!
+    
     func navigateToGame() {
-        
+        let viewController = GameFactory.shared.viewController()
+        self.navigationController.pushViewController(viewController, animated: true)
     }
     
 }

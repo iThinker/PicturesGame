@@ -11,10 +11,22 @@ import UIKit
 class MainNavigator {
 
     fileprivate var window: UIWindow!
+    fileprivate var navigationController: UINavigationController!
     
     func show(in window: UIWindow) {
         self.window = window
-        self.window.rootViewController = MainMenuFactory.shared.mainMenuViewController()
+        self.showMainMenu()
+    }
+    
+    fileprivate func showMainMenu() {
+        let viewController = MainMenuFactory.shared.mainMenuViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+        self.navigationController = navigationController
+        let router = MainMenuRouter()
+        router.navigationController = navigationController
+        viewController.presenter.router = router
+        self.window.rootViewController = navigationController
     }
     
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,17 +18,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idg-jg-Wwg" userLabel="Button - New Game">
-                    <rect key="frame" x="149" y="408" width="76" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idg-jg-Wwg" userLabel="Button - New Game">
+                    <rect key="frame" x="149.5" y="537" width="75" height="30"/>
                     <state key="normal" title="New Game"/>
                     <connections>
                         <action selector="newGameAction:" destination="-1" eventType="touchUpInside" id="44c-Bh-nEa"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-UF-NZe" userLabel="Button - Continue">
-                    <rect key="frame" x="134" y="243" width="106" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1U-UF-NZe" userLabel="Button - Continue">
+                    <rect key="frame" x="156" y="150" width="62" height="30"/>
                     <state key="normal" title="Continue"/>
                     <connections>
                         <action selector="continueGameAction:" destination="-1" eventType="touchUpInside" id="VpH-Iu-rPv"/>
@@ -36,6 +34,12 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="idg-jg-Wwg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C1W-OD-xz0"/>
+                <constraint firstAttribute="bottom" secondItem="idg-jg-Wwg" secondAttribute="bottom" constant="100" id="LaM-Zc-xhu"/>
+                <constraint firstItem="n1U-UF-NZe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="Szu-uG-U23"/>
+                <constraint firstItem="n1U-UF-NZe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XwV-kN-JNy"/>
+            </constraints>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>

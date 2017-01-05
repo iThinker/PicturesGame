@@ -11,7 +11,21 @@ import UIKit
 class GameFactory {
     
     static let shared = GameFactory()
-    fileprivate let repository = GameRepository()
+    fileprivate static let repository = GameRepository()
+    
+    func viewController() -> GameViewController {
+        let viewController = GameViewController()
+        viewController.presenter = self.presenter()
+        return viewController
+    }
+    
+    func presenter() -> GamePresenter {
+        let presenter = GamePresenter()
+        presenter.getGame = self.getGame()
+        presenter.selectLetter = self.selectLetter()
+        presenter.selectInputLetter = self.selectInputLetter()
+        return presenter
+    }
     
     func resetGameInteractor() -> ResetGame {
         let interactor = ResetGame()
@@ -20,7 +34,33 @@ class GameFactory {
     }
     
     func gameRepository() -> GameRepository {
-        return self.repository
+        return GameFactory.repository
+    }
+    
+    func getGame() -> GetGame {
+        let interactor = GetGame()
+        interactor.repository = self.gameRepository()
+        return interactor
+    }
+    
+    func saveGame() -> SaveGame {
+        let interactor = SaveGame()
+        interactor.repository = self.gameRepository()
+        return interactor
+    }
+    
+    func selectLetter() -> SelectLetter {
+        let interactor = SelectLetter()
+        interactor.getGame = self.getGame()
+        interactor.saveGame = self.saveGame()
+        return interactor
+    }
+    
+    func selectInputLetter() -> SelectInputLetter {
+        let interactor = SelectInputLetter()
+        interactor.getGame = self.getGame()
+        interactor.saveGame = self.saveGame()
+        return interactor
     }
     
 }

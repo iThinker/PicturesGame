@@ -27,6 +27,8 @@ class GameLevelEntity {
         
     }
     
+    static let MaxInputLength = 8
+    
     var index: Int!
     var availableLetters: [Letter]!
     var inputLetters: [InputLetter]!
