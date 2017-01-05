@@ -16,23 +16,33 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXL-eR-4dl">
                     <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="tapAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dbX-SB-cEF"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0U-Uq-XG6">
+                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AXL-eR-4dl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EXl-cx-3wR"/>
+                <constraint firstItem="H0U-Uq-XG6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QSW-Ec-g56"/>
+                <constraint firstAttribute="trailing" secondItem="H0U-Uq-XG6" secondAttribute="trailing" id="c1r-fO-CXc"/>
                 <constraint firstAttribute="bottom" secondItem="AXL-eR-4dl" secondAttribute="bottom" id="cxz-n0-ppI"/>
                 <constraint firstAttribute="trailing" secondItem="AXL-eR-4dl" secondAttribute="trailing" id="edy-H4-Ua2"/>
+                <constraint firstAttribute="bottom" secondItem="H0U-Uq-XG6" secondAttribute="bottom" id="hsd-9v-gq4"/>
+                <constraint firstItem="H0U-Uq-XG6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iaB-2Y-zoE"/>
                 <constraint firstItem="AXL-eR-4dl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xTv-gx-2wg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="button" destination="AXL-eR-4dl" id="WEQ-Tg-N3j"/>
+                <outlet property="label" destination="H0U-Uq-XG6" id="PTB-5a-gg7"/>
             </connections>
             <point key="canvasLocation" x="-89.5" y="176"/>
         </view>

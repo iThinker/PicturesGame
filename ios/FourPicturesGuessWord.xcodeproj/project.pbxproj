@@ -28,6 +28,7 @@
 		BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6C8401DFE3FAE0099CB00 /* GameFactory.swift */; };
 		BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6C8471DFFA1DC0099CB00 /* GamePresenter.swift */; };
 		BFC6C84A1DFFA80B0099CB00 /* GameLevelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6C8491DFFA80B0099CB00 /* GameLevelEntity.swift */; };
+		BFDF878C1E1DD9FD00452444 /* AdvanceToNextLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF878B1E1DD9FD00452444 /* AdvanceToNextLevel.swift */; };
 		BFF215171E056D910083DC7D /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF215161E056D910083DC7D /* GameViewController.xib */; };
 		BFF2151A1E05757A0083DC7D /* GameImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF215191E05757A0083DC7D /* GameImagesView.swift */; };
 		BFF2151C1E0575940083DC7D /* GameImagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF2151B1E0575940083DC7D /* GameImagesView.xib */; };
@@ -70,6 +71,7 @@
 		BFC6C8401DFE3FAE0099CB00 /* GameFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		BFC6C8471DFFA1DC0099CB00 /* GamePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		BFC6C8491DFFA80B0099CB00 /* GameLevelEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLevelEntity.swift; sourceTree = "<group>"; };
+		BFDF878B1E1DD9FD00452444 /* AdvanceToNextLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceToNextLevel.swift; sourceTree = "<group>"; };
 		BFF215161E056D910083DC7D /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		BFF215191E05757A0083DC7D /* GameImagesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameImagesView.swift; sourceTree = "<group>"; };
 		BFF2151B1E0575940083DC7D /* GameImagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameImagesView.xib; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */,
 				BFC10AD01E038CB2006EAACE /* GetGame.swift */,
 				BFC10AD31E038D25006EAACE /* SaveGame.swift */,
+				BFDF878B1E1DD9FD00452444 /* AdvanceToNextLevel.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				BFF2152D1E0645170083DC7D /* GameLetterView.swift in Sources */,
 				BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */,
 				BFC10ADE1E04D6CE006EAACE /* GameViewController.swift in Sources */,
+				BFDF878C1E1DD9FD00452444 /* AdvanceToNextLevel.swift in Sources */,
 				BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */,
 				BFC6C83B1DFE3EDD0099CB00 /* GameRepository.swift in Sources */,
 				BFC6C82D1DFE33330099CB00 /* MainMenuViewController.swift in Sources */,

@@ -24,6 +24,7 @@ class GameFactory {
         presenter.getGame = self.getGame()
         presenter.selectLetter = self.selectLetter()
         presenter.selectInputLetter = self.selectInputLetter()
+        presenter.advanceToNextLevel = self.advanceToNextLevel()
         return presenter
     }
     
@@ -60,6 +61,14 @@ class GameFactory {
         let interactor = SelectInputLetter()
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
+        return interactor
+    }
+    
+    func advanceToNextLevel() -> AdvanceToNextLevel {
+        let interactor = AdvanceToNextLevel()
+        interactor.getGame = self.getGame()
+        interactor.saveGame = self.saveGame()
+        interactor.repository = self.gameRepository()
         return interactor
     }
     

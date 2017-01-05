@@ -71,7 +71,7 @@ extension GameViewController: GamePresentable {
     }
     
     func showLevelComplete() {
-        print("Level Complete \n")
+        self.presenter.advanceToNextLevelAction()
     }
     
     func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GameLevelEntity.InputLetter) {

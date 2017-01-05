@@ -14,7 +14,9 @@ class GameInputView: UIView {
     
     var input: [GameLevelEntity.InputLetter]! {
         didSet {
-            self.collectionView.reloadData()
+            self.collectionView.performBatchUpdates({
+                self.collectionView.reloadSections(IndexSet(integer: 0))
+            }, completion: nil)
         }
     }
     
@@ -79,7 +81,7 @@ class GameInputView: UIView {
 extension GameInputView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.input.count
+        return self.input?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

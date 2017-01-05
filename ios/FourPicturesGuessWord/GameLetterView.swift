@@ -11,11 +11,13 @@ import UIKit
 class GameLetterView: UIView {
 
     @IBOutlet fileprivate var button: UIButton!
+    @IBOutlet fileprivate var label: UILabel!
     
     var letter: GameLevelEntity.Letter! {
         didSet {
+            self.label.text = String(letter.character)
             self.button.isHidden = letter.selected
-            self.button.setTitle(String(letter.character), for: .normal)
+            self.label.isHidden = letter.selected
         }
     }
     

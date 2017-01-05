@@ -33,14 +33,10 @@ class GamePresenter {
     var getGame: GetGame!
     var selectLetter: SelectLetter!
     var selectInputLetter: SelectInputLetter!
+    var advanceToNextLevel: AdvanceToNextLevel!
     
     func startPresentation() {
-        let game = self.getGame.get()
-        let level = game.currentLevel!
-        self.presentableModel = PresentableModel()
-        self.presentableModel.images = level.images.map({ UIImage(named: $0)! })
-        self.updatePresentableModel(with: level)
-        self.presentable.show(presentableModel)
+        self.showCurrentLevel()
     }
     
     func select(_ letter: GameLevelEntity.Letter) {
@@ -70,11 +66,21 @@ class GamePresenter {
         }
     }
     
-    func advanceToNextLevel() {
-        
+    func advanceToNextLevelAction() {
+        self.advanceToNextLevel.advance()
+        self.showCurrentLevel()
     }
     
     //MARK: Private
+    
+    fileprivate func showCurrentLevel() {
+        let game = self.getGame.get()
+        let level = game.currentLevel!
+        self.presentableModel = PresentableModel()
+        self.presentableModel.images = level.images.map({ UIImage(named: $0)! })
+        self.updatePresentableModel(with: level)
+        self.presentable.show(self.presentableModel)
+    }
     
     fileprivate func syncPresentableModelState() {
         let game = self.getGame.get()

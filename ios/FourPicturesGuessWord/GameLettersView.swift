@@ -14,9 +14,9 @@ class GameLettersView: UIView {
     
     var letters: [GameLevelEntity.Letter]! {
         didSet {
-            UIView.performWithoutAnimation {
-                self.collectionView.reloadData()
-            }
+            self.collectionView.performBatchUpdates({
+                self.collectionView.reloadSections(IndexSet(integer: 0))
+            }, completion: nil)
         }
     }
     
@@ -48,6 +48,10 @@ class GameLettersView: UIView {
         let itemWidth = (self.bounds.width - interitemSpace) / numberOfLettersInLine
         let newItemSize = CGSize(width: itemWidth, height: itemWidth)
         layout.itemSize = newItemSize
+        self.collectionView.setNeedsLayout()
+        self.collectionView.layoutIfNeeded()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+//        self.collectionView.reloadData()
     }
     
     override var intrinsicContentSize: CGSize {
@@ -77,7 +81,7 @@ class GameLettersView: UIView {
 extension GameLettersView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.letters.count
+        return self.letters?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
