@@ -77,7 +77,7 @@ class GamePresenter {
         let game = self.getGame.get()
         let level = game.currentLevel!
         self.presentableModel = PresentableModel()
-        self.presentableModel.images = level.images.map({ UIImage(named: $0)! })
+        self.presentableModel.images = level.images.map({ UIImage(contentsOfFile: $0)! })
         self.updatePresentableModel(with: level)
         self.presentable.show(self.presentableModel)
     }

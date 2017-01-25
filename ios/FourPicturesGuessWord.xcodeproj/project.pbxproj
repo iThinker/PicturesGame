@@ -10,6 +10,7 @@
 		BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328B1E00DE5600D89E9E /* SelectLetter.swift */; };
 		BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */; };
 		BF1D5F551E024DFD00850BAB /* stub0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F531E024DFD00850BAB /* stub0.png */; };
+		BF818F971E3862F700178511 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = BF818F961E3862F700178511 /* Levels */; };
 		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
 		BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD31E038D25006EAACE /* SaveGame.swift */; };
 		BFC10ADE1E04D6CE006EAACE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10ADC1E04D6CE006EAACE /* GameViewController.swift */; };
@@ -51,6 +52,7 @@
 		BF05328B1E00DE5600D89E9E /* SelectLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLetter.swift; sourceTree = "<group>"; };
 		BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInputLetter.swift; sourceTree = "<group>"; };
 		BF1D5F531E024DFD00850BAB /* stub0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub0.png; path = Resources/Stubs/stub0.png; sourceTree = SOURCE_ROOT; };
+		BF818F961E3862F700178511 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Levels; path = Resources/Levels; sourceTree = SOURCE_ROOT; };
 		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
 		BFC10AD31E038D25006EAACE /* SaveGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGame.swift; sourceTree = "<group>"; };
 		BFC10ADC1E04D6CE006EAACE /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		BFC6C81E1DFE2D9D0099CB00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF818F961E3862F700178511 /* Levels */,
 				BF1D5F521E024D9C00850BAB /* Stub Images */,
 				BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */,
 			);
@@ -456,6 +459,7 @@
 				BFF2152F1E06452C0083DC7D /* GameLetterView.xib in Resources */,
 				BFF215271E063E2E0083DC7D /* GameInputView.xib in Resources */,
 				BFF215231E063E100083DC7D /* GameLettersView.xib in Resources */,
+				BF818F971E3862F700178511 /* Levels in Resources */,
 				BFF2151C1E0575940083DC7D /* GameImagesView.xib in Resources */,
 				BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */,
 			);

@@ -17,7 +17,7 @@ class AdvanceToNextLevel {
     func advance() -> Void {
         let game = self.getGame.get()
         let currentLevel = game.currentLevel!
-        let nextLevel = self.repository.getLevel(at: currentLevel.index)
+        let nextLevel = self.repository.getLevel(at: currentLevel.index + 1)
         game.currentLevel = nextLevel
         self.saveGame.save(game)
     }

@@ -51,7 +51,6 @@ class GameLettersView: UIView {
         self.collectionView.setNeedsLayout()
         self.collectionView.layoutIfNeeded()
         self.collectionView.collectionViewLayout.invalidateLayout()
-//        self.collectionView.reloadData()
     }
     
     override var intrinsicContentSize: CGSize {
