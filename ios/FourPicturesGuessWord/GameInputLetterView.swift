@@ -12,7 +12,7 @@ class GameInputLetterView: UIView {
 
     @IBOutlet fileprivate var button: UIButton!
     
-    var inputLetter: GameLevelEntity.InputLetter! {
+    var inputLetter: GamePresenter.PresentableModel.InputModel! {
         didSet {
             if let letter = inputLetter.letter {
                 self.button.isHidden = false

@@ -63,7 +63,7 @@ extension GameViewController: GamePresentable {
     func show(_ presentableModel: GamePresenter.PresentableModel) {
         self.imagesView.showImages(presentableModel.images)
         self.lettersView.letters = presentableModel.letters
-        self.lettersInputView.input = presentableModel.inputLetters
+        self.lettersInputView.input = presentableModel.input
     }
     
     func showNoInputSpaceLeft() {
@@ -74,12 +74,12 @@ extension GameViewController: GamePresentable {
         self.presenter.advanceToNextLevelAction()
     }
     
-    func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GameLevelEntity.InputLetter) {
+    func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GamePresenter.PresentableModel.InputModel) {
         self.lettersView.letterUpdated(letter)
         self.lettersInputView.inputUpdated(inputLetter)
     }
     
-    func showInputLetterRemoved(_ inputLetter: GameLevelEntity.InputLetter, letter: GameLevelEntity.Letter) {
+    func showInputLetterRemoved(_ inputLetter: GamePresenter.PresentableModel.InputModel, letter: GameLevelEntity.Letter) {
         self.lettersView.letterUpdated(letter)
         self.lettersInputView.inputUpdated(inputLetter)
     }

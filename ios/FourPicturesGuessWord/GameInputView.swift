@@ -12,7 +12,7 @@ class GameInputView: UIView {
     
     typealias CollectionViewCell = CollectionViewContainerCell<GameInputLetterView>
     
-    var input: [GameLevelEntity.InputLetter]! {
+    var input: [GamePresenter.PresentableModel.InputModel]! {
         didSet {
             self.collectionView.performBatchUpdates({
                 self.collectionView.reloadSections(IndexSet(integer: 0))
@@ -20,7 +20,7 @@ class GameInputView: UIView {
         }
     }
     
-    var didSelectLetter: ((GameLevelEntity.InputLetter) -> Void)!
+    var didSelectLetter: ((GamePresenter.PresentableModel.InputModel) -> Void)!
     
     @IBOutlet fileprivate var collectionView: UICollectionView!
     @IBOutlet fileprivate var collectionViewWidthLayoutConstraint: NSLayoutConstraint!
@@ -47,7 +47,7 @@ class GameInputView: UIView {
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let numberOfLettersInLine = CGFloat(GameLevelEntity.MaxInputLength)
         let interitemSpace = layout.minimumInteritemSpacing * (numberOfLettersInLine - 1)
-        let itemWidth = (self.bounds.width - interitemSpace) / numberOfLettersInLine
+        let itemWidth = floor((self.bounds.width - interitemSpace) / numberOfLettersInLine)
         let newItemSize = CGSize(width: itemWidth, height: itemWidth)
         layout.itemSize = newItemSize
         self.collectionViewHeightLayoutConstraint.constant = itemWidth
@@ -69,11 +69,11 @@ class GameInputView: UIView {
         }
     }
     
-    func inputUpdated(_ letter: GameLevelEntity.InputLetter) {
-        if let index = self.input.index(where: { $0 === letter }) {
-            let indexPath = IndexPath(item: Int(index), section: 0)
-            self.collectionView.reloadItems(at: [indexPath])
-        }
+    func inputUpdated(_ inputModel: GamePresenter.PresentableModel.InputModel) {
+        let index = inputModel.index
+        self.input[index] = inputModel
+        let indexPath = IndexPath(item: index, section: 0)
+        self.collectionView.reloadItems(at: [indexPath])
     }
     
 }

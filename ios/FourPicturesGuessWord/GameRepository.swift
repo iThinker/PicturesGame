@@ -16,10 +16,15 @@ class GameRepository {
         return game
     }()
     
-    var index: [[String: String]] = []
+    static let levelIndex: [[String: String]] = {
+        let path = Bundle.main.path(forResource: "index", ofType: "json", inDirectory: "Levels")
+        let data = FileManager.default.contents(atPath: path!)
+        let index = try! JSONSerialization.jsonObject(with: data!, options: []) as! [[String : String]]
+        return index
+    }()
     
-    init() {
-        self.loadLevelIndex()
+    var index: [[String: String]] {
+        return GameRepository.levelIndex
     }
     
     func save(_ game: GameEntity) {
@@ -38,13 +43,6 @@ class GameRepository {
     
     func getTotalLevelCount() -> Int {
         return self.index.count
-    }
-    
-    fileprivate func loadLevelIndex() {
-        let path = Bundle.main.path(forResource: "index", ofType: "json", inDirectory: "Levels")
-        let data = FileManager.default.contents(atPath: path!)
-        let index = try! JSONSerialization.jsonObject(with: data!, options: []) as! [[String : String]]
-        self.index = index
     }
     
     fileprivate func levelAt(index: Int) -> GameLevelEntity {

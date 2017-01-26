@@ -19,10 +19,10 @@ class GameLevelEntity {
     
     class InputLetter {
         
-        var letter: Letter?
+        var letterIndex: Int?
         
         var isEmpty: Bool {
-            return self.letter == nil
+            return self.letterIndex == nil
         }
         
     }
@@ -48,7 +48,7 @@ class GameLevelEntity {
         letter.selected = true
         for inputLetter in self.inputLetters {
             if inputLetter.isEmpty {
-                inputLetter.letter = letter
+                inputLetter.letterIndex = self.index(of: letter)
                 return inputLetter
             }
         }
@@ -56,14 +56,24 @@ class GameLevelEntity {
     }
     
     func remove(_ inputLetter: InputLetter) -> Letter? {
-        let letter = inputLetter.letter
-        inputLetter.letter?.selected = false
-        inputLetter.letter = nil
+        let letter = self.letter(for: inputLetter)
+        letter?.selected = false
+        inputLetter.letterIndex = nil
         return letter
     }
     
     fileprivate var inputWord: String {
-        return self.inputLetters.flatMap { $0.letter }.map { String($0.character) }.reduce("", +)
+        return self.inputLetters.flatMap { self.letter(for: $0) }.map { String($0.character) }.reduce("", +)
+    }
+    
+    func letter(for inputLetter: InputLetter) -> Letter? {
+        return inputLetter.letterIndex == nil ? nil : self.availableLetters[inputLetter.letterIndex!]
+    }
+    
+    fileprivate func index(of letter: Letter) -> Int {
+        return self.availableLetters.index(where: { arrayLetter -> Bool in
+            return arrayLetter === letter
+        })!
     }
     
 }

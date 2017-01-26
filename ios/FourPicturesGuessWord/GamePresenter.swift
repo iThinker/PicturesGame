@@ -12,17 +12,25 @@ protocol GamePresentable: class {
     func show(_ presentableModel: GamePresenter.PresentableModel)
     func showNoInputSpaceLeft()
     func showLevelComplete()
-    func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GameLevelEntity.InputLetter)
-    func showInputLetterRemoved(_ inputLetter: GameLevelEntity.InputLetter, letter: GameLevelEntity.Letter)
+    func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GamePresenter.PresentableModel.InputModel)
+    func showInputLetterRemoved(_ inputLetter: GamePresenter.PresentableModel.InputModel, letter: GameLevelEntity.Letter)
 }
 
 class GamePresenter {
     
     class PresentableModel {
         
+        class InputModel {
+            
+            var letter: GameLevelEntity.Letter?
+            var inputLetter: GameLevelEntity.InputLetter!
+            var index = 0
+            
+        }
+        
         var images: [UIImage]!
         var letters: [GameLevelEntity.Letter]!
-        var inputLetters: [GameLevelEntity.InputLetter]!
+        var input: [InputModel]!
         var isWrongWord = false
         
     }
@@ -50,19 +58,28 @@ class GamePresenter {
             self.presentable.showLevelComplete()
             break
         case .success(let inputLetter):
-            self.presentable.showLetterSelected(letter, inputLetter: inputLetter)
+            self.syncPresentableModelState()
+            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+            self.presentable.showLetterSelected(letter, inputLetter: input)
+            break
         case .successWrongWord(let inputLetter):
+            self.syncPresentableModelState()
             self.presentableModel.isWrongWord = true
-            self.presentable.showLetterSelected(letter, inputLetter: inputLetter)
+            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+            self.presentable.showLetterSelected(letter, inputLetter: input)
             self.presentable.showNoInputSpaceLeft()
+            break
         }
-        self.syncPresentableModelState()
     }
     
-    func select(_ inputLetter: GameLevelEntity.InputLetter) {
-        let result = self.selectInputLetter.select(inputLetter)
-        if let letter = result {
-            self.presentable.showInputLetterRemoved(inputLetter, letter: letter)
+    func select(_ input: GamePresenter.PresentableModel.InputModel) {
+        if let inputLetter = input.inputLetter {
+            let result = self.selectInputLetter.select(inputLetter)
+            if let letter = result {
+                self.syncPresentableModelState()
+                let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+                self.presentable.showInputLetterRemoved(input, letter: letter)
+            }
         }
     }
     
@@ -90,7 +107,15 @@ class GamePresenter {
     
     fileprivate func updatePresentableModel(with level: GameLevelEntity) {
         self.presentableModel.letters = level.availableLetters
-        self.presentableModel.inputLetters = level.inputLetters
+        var i = 0
+        self.presentableModel.input = level.inputLetters.map({ inputLetter -> PresentableModel.InputModel in
+            let input = PresentableModel.InputModel()
+            input.inputLetter = inputLetter
+            input.letter = level.letter(for: inputLetter)
+            input.index = i
+            i += 1
+            return input
+        })
         self.presentableModel.isWrongWord = level.hasFreeInput == false
     }
     
