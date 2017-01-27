@@ -197,16 +197,8 @@
 				BFC6C8311DFE3BA10099CB00 /* Router */,
 				BFC6C8241DFE30600099CB00 /* View */,
 				BFC6C8231DFE305B0099CB00 /* Presenter */,
-				BFC6C8221DFE30400099CB00 /* Interactor */,
 			);
 			name = "Main Menu";
-			sourceTree = "<group>";
-		};
-		BFC6C8221DFE30400099CB00 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Interactor;
 			sourceTree = "<group>";
 		};
 		BFC6C8231DFE305B0099CB00 /* Presenter */ = {

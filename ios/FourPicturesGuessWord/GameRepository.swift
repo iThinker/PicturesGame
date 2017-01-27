@@ -14,12 +14,16 @@ class GameRepository {
         let game = GameEntity()
         if let savedGameState = UserDefaults.standard.dictionary(forKey: "savedGameState") {
             let levelNumber = savedGameState["levelNumber"] as! Int
-            let level = GameRepository().getLevel(at: levelNumber)
+            let level: GameLevelEntity = GameRepository().getLevel(at: levelNumber)
             let savedInput = savedGameState["input"] as! Array<Int>
             level.inputLetters = savedInput.map({ index -> GameLevelEntity.InputLetter in
                 let letter = GameLevelEntity.InputLetter()
                 letter.letterIndex = index == -1 ? nil : index
                 return letter
+            })
+            level.inputLetters.forEach({ inputLetter in
+                let letter = level.letter(for: inputLetter)
+                letter?.selected = true
             })
             game.currentLevel = level
         }

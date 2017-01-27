@@ -31,6 +31,7 @@ class GameFactory {
     func resetGameInteractor() -> ResetGame {
         let interactor = ResetGame()
         interactor.repository = self.gameRepository()
+        interactor.saveGame = self.saveGame()
         return interactor
     }
     
