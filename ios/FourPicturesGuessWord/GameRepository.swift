@@ -12,7 +12,20 @@ class GameRepository {
 
     static var game: GameEntity = {
         let game = GameEntity()
-        game.currentLevel = GameRepository().getLevel(at: 0)
+        if let savedGameState = UserDefaults.standard.dictionary(forKey: "savedGameState") {
+            let levelNumber = savedGameState["levelNumber"] as! Int
+            let level = GameRepository().getLevel(at: levelNumber)
+            let savedInput = savedGameState["input"] as! Array<Int>
+            level.inputLetters = savedInput.map({ index -> GameLevelEntity.InputLetter in
+                let letter = GameLevelEntity.InputLetter()
+                letter.letterIndex = index == -1 ? nil : index
+                return letter
+            })
+            game.currentLevel = level
+        }
+        else {
+            game.currentLevel = GameRepository().getLevel(at: 0)
+        }
         return game
     }()
     
@@ -28,6 +41,12 @@ class GameRepository {
     }
     
     func save(_ game: GameEntity) {
+        var currentStateDict: [String: Any] = [:]
+        let level = game.currentLevel!
+        currentStateDict["levelNumber"] = level.index
+        currentStateDict["input"] = level.inputLetters.map({ return $0.letterIndex ?? -1 })
+        UserDefaults.standard.set(currentStateDict, forKey: "savedGameState")
+        UserDefaults.standard.synchronize()
         GameRepository.game = game
     }
     
