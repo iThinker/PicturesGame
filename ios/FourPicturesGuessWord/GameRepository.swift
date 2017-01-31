@@ -12,6 +12,7 @@ class GameRepository {
 
     static var game: GameEntity = {
         let game = GameEntity()
+        game.numberOfLevels = GameRepository.levelIndex.count
         if let savedGameState = UserDefaults.standard.dictionary(forKey: "savedGameState") {
             let levelNumber = savedGameState["levelNumber"] as! Int
             let level: GameLevelEntity = GameRepository().getLevel(at: levelNumber)
@@ -66,6 +67,13 @@ class GameRepository {
     
     func getTotalLevelCount() -> Int {
         return self.index.count
+    }
+    
+    func newGame() -> GameEntity {
+        let game = GameEntity()
+        game.numberOfLevels = self.index.count
+        game.currentLevel = self.getLevel(at: 0)
+        return game
     }
     
     fileprivate func levelAt(index: Int) -> GameLevelEntity {

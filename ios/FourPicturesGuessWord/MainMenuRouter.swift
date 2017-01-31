@@ -14,6 +14,9 @@ class MainMenuRouter {
     
     func navigateToGame() {
         let viewController = GameFactory.shared.viewController()
+        viewController.presenter.onGameComplete = {
+            self.navigationController.popViewController(animated: true)
+        }
         self.navigationController.pushViewController(viewController, animated: true)
     }
     

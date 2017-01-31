@@ -11,7 +11,8 @@ import UIKit
 protocol GamePresentable: class {
     func show(_ presentableModel: GamePresenter.PresentableModel)
     func showNoInputSpaceLeft()
-    func showLevelComplete()
+    func showLevelComplete(levelNumber: Int)
+    func showGameComplete()
     func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GamePresenter.PresentableModel.InputModel)
     func showInputLetterRemoved(_ inputLetter: GamePresenter.PresentableModel.InputModel, letter: GameLevelEntity.Letter)
 }
@@ -42,6 +43,9 @@ class GamePresenter {
     var selectLetter: SelectLetter!
     var selectInputLetter: SelectInputLetter!
     var advanceToNextLevel: AdvanceToNextLevel!
+    var resetGame: ResetGame!
+    
+    var onGameComplete: (() -> Void)!
     
     func startPresentation() {
         self.showCurrentLevel()
@@ -49,26 +53,34 @@ class GamePresenter {
     
     func select(_ letter: GameLevelEntity.Letter) {
         let result = self.selectLetter.select(letter)
+        var resultInputLetter: GameLevelEntity.InputLetter?
         switch result {
         case .failureNoSpace:
             self.presentableModel.isWrongWord = true
             self.presentable.showNoInputSpaceLeft()
             break
-        case .levelComplete:
-            self.presentable.showLevelComplete()
+        case .levelComplete(let level, let inputLetter):
+            resultInputLetter = inputLetter
+            self.presentable.showLevelComplete(levelNumber: level.index)
             break
         case .success(let inputLetter):
-            self.syncPresentableModelState()
-            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
-            self.presentable.showLetterSelected(letter, inputLetter: input)
+            resultInputLetter = inputLetter
             break
         case .successWrongWord(let inputLetter):
-            self.syncPresentableModelState()
             self.presentableModel.isWrongWord = true
-            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
-            self.presentable.showLetterSelected(letter, inputLetter: input)
+            resultInputLetter = inputLetter
             self.presentable.showNoInputSpaceLeft()
             break
+        case .gameComplete(_, let inputLetter):
+            resultInputLetter = inputLetter
+            self.presentable.showGameComplete()
+            break
+        }
+        
+        if let inputLetter = resultInputLetter {
+            self.syncPresentableModelState()
+            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+            self.presentable.showLetterSelected(letter, inputLetter: input)
         }
     }
     
@@ -86,6 +98,11 @@ class GamePresenter {
     func advanceToNextLevelAction() {
         self.advanceToNextLevel.advance()
         self.showCurrentLevel()
+    }
+    
+    func finishGameAction() {
+        self.resetGame.reset()
+        self.onGameComplete()
     }
     
     //MARK: Private

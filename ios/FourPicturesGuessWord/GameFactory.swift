@@ -25,6 +25,7 @@ class GameFactory {
         presenter.selectLetter = self.selectLetter()
         presenter.selectInputLetter = self.selectInputLetter()
         presenter.advanceToNextLevel = self.advanceToNextLevel()
+        presenter.resetGame = self.resetGameInteractor()
         return presenter
     }
     

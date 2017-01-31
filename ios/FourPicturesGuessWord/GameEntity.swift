@@ -10,6 +10,7 @@ import UIKit
 
 class GameEntity {
     
+    var numberOfLevels: Int = 0
     var currentLevel: GameLevelEntity!
     
 }

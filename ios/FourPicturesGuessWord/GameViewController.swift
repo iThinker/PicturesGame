@@ -9,7 +9,7 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
+    
     @IBOutlet var imagesContainerView: UIView!
     @IBOutlet var inputContainerView: UIView!
     @IBOutlet var lettersContainerView: UIView!
@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.configureImagesView()
         self.configureInputView()
         self.configureLettersView()
@@ -70,8 +70,14 @@ extension GameViewController: GamePresentable {
         print("No Input \n")
     }
     
-    func showLevelComplete() {
-        self.presenter.advanceToNextLevelAction()
+    func showLevelComplete(levelNumber: Int) {
+        let alert = UIAlertController(title: "Congratulations", message: "Level \(levelNumber) complete!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+            [weak self]
+            _ in
+            self?.presenter.advanceToNextLevelAction()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GamePresenter.PresentableModel.InputModel) {
@@ -82,6 +88,16 @@ extension GameViewController: GamePresentable {
     func showInputLetterRemoved(_ inputLetter: GamePresenter.PresentableModel.InputModel, letter: GameLevelEntity.Letter) {
         self.lettersView.letterUpdated(letter)
         self.lettersInputView.inputUpdated(inputLetter)
+    }
+    
+    func showGameComplete() {
+        let alert = UIAlertController(title: "Congratulations", message: "Game complete!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+            [weak self]
+            _ in
+            self?.presenter.finishGameAction()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

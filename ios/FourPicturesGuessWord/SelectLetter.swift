@@ -14,7 +14,8 @@ class SelectLetter {
         case success(GameLevelEntity.InputLetter)
         case successWrongWord(GameLevelEntity.InputLetter)
         case failureNoSpace
-        case levelComplete(GameLevelEntity.InputLetter)
+        case levelComplete(GameLevelEntity, GameLevelEntity.InputLetter)
+        case gameComplete(GameEntity, GameLevelEntity.InputLetter)
     }
     
     
@@ -34,7 +35,12 @@ class SelectLetter {
         self.saveGame.save(game)
         
         if level.isSolved {
-            return .levelComplete(result)
+            if game.numberOfLevels <= level.index + 1 {
+                return .gameComplete(game, result)
+            }
+            else {
+                return .levelComplete(level, result)
+            }
         }
         
         if level.hasFreeInput == false {
