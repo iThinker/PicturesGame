@@ -16,15 +16,17 @@ class GameRepository {
         if let savedGameState = UserDefaults.standard.dictionary(forKey: "savedGameState") {
             let levelNumber = savedGameState["levelNumber"] as! Int
             let level: GameLevelEntity = GameRepository().getLevel(at: levelNumber)
-            let savedInput = savedGameState["input"] as! Array<Int>
-            level.inputLetters = savedInput.map({ index -> GameLevelEntity.InputLetter in
+            let savedInput = savedGameState["input"] as! [[String: Any]]
+            level.inputLetters = savedInput.map({ dict -> GameLevelEntity.InputLetter in
                 let letter = GameLevelEntity.InputLetter()
+                let index = dict["letterIndex"] as! Int
                 letter.letterIndex = index == -1 ? nil : index
+                letter.isRevealed = dict["isRevealed"] as! Bool
                 return letter
             })
             level.inputLetters.forEach({ inputLetter in
                 let letter = level.letter(for: inputLetter)
-                letter?.selected = true
+                letter?.isSelected = true
             })
             game.currentLevel = level
         }
@@ -49,7 +51,8 @@ class GameRepository {
         var currentStateDict: [String: Any] = [:]
         let level = game.currentLevel!
         currentStateDict["levelNumber"] = level.index
-        currentStateDict["input"] = level.inputLetters.map({ return $0.letterIndex ?? -1 })
+        currentStateDict["input"] = level.inputLetters.map({ return ["letterIndex": $0.letterIndex ?? -1,
+                                                                     "isRevealed": $0.isRevealed] })
         UserDefaults.standard.set(currentStateDict, forKey: "savedGameState")
         UserDefaults.standard.synchronize()
         GameRepository.game = game

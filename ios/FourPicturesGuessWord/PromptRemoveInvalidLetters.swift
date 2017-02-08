@@ -10,8 +10,16 @@ import Foundation
 
 class PromptRemoveInvalidLetters {
     
+    var getGame: GetGame!
+    var saveGame: SaveGame!
+    
     func remove() {
+        let game = self.getGame.get()
+        let level = game.currentLevel
         
+        
+        
+        self.saveGame.save(game)
     }
     
 }

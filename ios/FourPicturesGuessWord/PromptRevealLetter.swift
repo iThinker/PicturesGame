@@ -54,7 +54,7 @@ class PromptRevealLetter {
         let letterIndex = level.index(of: revealedLetter)
         nextUnrevealedInputLetter.letterIndex = letterIndex
         nextUnrevealedInputLetter.isRevealed = true
-        revealedLetter.selected = true
+        revealedLetter.isSelected = true
         
         self.saveGame.save(game)
         

@@ -13,7 +13,8 @@ class GameLevelEntity {
     class Letter {
         
         var character: Character!
-        var selected = false
+        var isSelected = false
+        var isRemoved = false
         
     }
     
@@ -46,7 +47,7 @@ class GameLevelEntity {
     
     func append(_ letter: Letter) -> InputLetter {
         assert(self.hasFreeInput == true)
-        letter.selected = true
+        letter.isSelected = true
         for inputLetter in self.inputLetters {
             if inputLetter.isEmpty {
                 inputLetter.letterIndex = self.index(of: letter)
@@ -58,7 +59,7 @@ class GameLevelEntity {
     
     func remove(_ inputLetter: InputLetter) -> Letter? {
         let letter = self.letter(for: inputLetter)
-        letter?.selected = false
+        letter?.isSelected = false
         inputLetter.letterIndex = nil
         return letter
     }

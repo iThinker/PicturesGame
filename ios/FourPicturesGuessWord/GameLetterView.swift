@@ -16,8 +16,8 @@ class GameLetterView: UIView {
     var letter: GameLevelEntity.Letter! {
         didSet {
             self.label.text = String(letter.character)
-            self.button.isHidden = letter.selected
-            self.label.isHidden = letter.selected
+            self.button.isHidden = letter.isSelected
+            self.label.isHidden = letter.isSelected
         }
     }
     
