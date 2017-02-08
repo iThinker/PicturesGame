@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328B1E00DE5600D89E9E /* SelectLetter.swift */; };
 		BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */; };
+		BF1A15FD1E415C8F0027B9C6 /* PromptRevealLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A15FC1E415C8F0027B9C6 /* PromptRevealLetter.swift */; };
+		BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */; };
 		BF1D5F551E024DFD00850BAB /* stub0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F531E024DFD00850BAB /* stub0.png */; };
 		BF818F971E3862F700178511 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = BF818F961E3862F700178511 /* Levels */; };
 		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		BF05328B1E00DE5600D89E9E /* SelectLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLetter.swift; sourceTree = "<group>"; };
 		BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInputLetter.swift; sourceTree = "<group>"; };
+		BF1A15FC1E415C8F0027B9C6 /* PromptRevealLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptRevealLetter.swift; sourceTree = "<group>"; };
+		BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptRemoveInvalidLetters.swift; sourceTree = "<group>"; };
 		BF1D5F531E024DFD00850BAB /* stub0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub0.png; path = Resources/Stubs/stub0.png; sourceTree = SOURCE_ROOT; };
 		BF818F961E3862F700178511 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Levels; path = Resources/Levels; sourceTree = SOURCE_ROOT; };
 		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF1A15FB1E415BF70027B9C6 /* Hints */ = {
+			isa = PBXGroup;
+			children = (
+				BF1A15FC1E415C8F0027B9C6 /* PromptRevealLetter.swift */,
+				BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */,
+			);
+			name = Hints;
+			sourceTree = "<group>";
+		};
 		BF1D5F521E024D9C00850BAB /* Stub Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 		BFC6C8351DFE3E810099CB00 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A15FB1E415BF70027B9C6 /* Hints */,
 				BFC6C8361DFE3EA40099CB00 /* ResetGame.swift */,
 				BF05328B1E00DE5600D89E9E /* SelectLetter.swift */,
 				BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */,
@@ -464,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1A15FD1E415C8F0027B9C6 /* PromptRevealLetter.swift in Sources */,
 				BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */,
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
 				BFFACC1B1E0A0EA800444BAD /* ViewEmbedder.swift in Sources */,
@@ -481,6 +496,7 @@
 				BFFACC211E0A1F4E00444BAD /* UIView+NibLoading.swift in Sources */,
 				BFC6C8301DFE33560099CB00 /* MainMenuPresenter.swift in Sources */,
 				BFF215251E063E1E0083DC7D /* GameInputView.swift in Sources */,
+				BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */,
 				BFF215211E063DFA0083DC7D /* GameLettersView.swift in Sources */,
 				BFFACC281E10616D00444BAD /* CollectionViewContainerCell.swift in Sources */,
 				BFC6C83E1DFE3EFD0099CB00 /* GameEntity.swift in Sources */,

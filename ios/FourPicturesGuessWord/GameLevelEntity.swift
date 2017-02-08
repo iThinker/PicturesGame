@@ -20,6 +20,7 @@ class GameLevelEntity {
     class InputLetter {
         
         var letterIndex: Int?
+        var isRevealed = false
         
         var isEmpty: Bool {
             return self.letterIndex == nil
@@ -62,18 +63,18 @@ class GameLevelEntity {
         return letter
     }
     
-    fileprivate var inputWord: String {
-        return self.inputLetters.flatMap { self.letter(for: $0) }.map { String($0.character) }.reduce("", +)
-    }
-    
     func letter(for inputLetter: InputLetter) -> Letter? {
         return inputLetter.letterIndex == nil ? nil : self.availableLetters[inputLetter.letterIndex!]
     }
     
-    fileprivate func index(of letter: Letter) -> Int {
+    func index(of letter: Letter) -> Int {
         return self.availableLetters.index(where: { arrayLetter -> Bool in
             return arrayLetter === letter
         })!
+    }
+    
+    fileprivate var inputWord: String {
+        return self.inputLetters.flatMap { self.letter(for: $0) }.map { String($0.character) }.reduce("", +)
     }
     
 }
