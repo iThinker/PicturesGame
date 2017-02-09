@@ -26,6 +26,8 @@ class GameFactory {
         presenter.selectInputLetter = self.selectInputLetter()
         presenter.advanceToNextLevel = self.advanceToNextLevel()
         presenter.resetGame = self.resetGameInteractor()
+        presenter.promptRevealLetter = self.promptRevealLetter()
+        presenter.promptRemoveInvalidLetters = self.promptRemoveInvalidLetters()
         return presenter
     }
     
@@ -71,6 +73,20 @@ class GameFactory {
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
         interactor.repository = self.gameRepository()
+        return interactor
+    }
+    
+    func promptRevealLetter() -> PromptRevealLetter {
+        let interactor = PromptRevealLetter()
+        interactor.getGame = self.getGame()
+        interactor.saveGame = self.saveGame()
+        return interactor
+    }
+    
+    func promptRemoveInvalidLetters() -> PromptRemoveInvalidLetters {
+        let interactor = PromptRemoveInvalidLetters()
+        interactor.getGame = self.getGame()
+        interactor.saveGame = self.saveGame()
         return interactor
     }
     

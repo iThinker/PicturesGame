@@ -15,6 +15,11 @@ protocol GamePresentable: class {
     func showGameComplete()
     func showLetterSelected(_ letter: GameLevelEntity.Letter, inputLetter: GamePresenter.PresentableModel.InputModel)
     func showInputLetterRemoved(_ inputLetter: GamePresenter.PresentableModel.InputModel, letter: GameLevelEntity.Letter)
+    func showInputLetterRevealed(_ inputLetter: GamePresenter.PresentableModel.InputModel)
+    func showLetterSelected(_ letter: GameLevelEntity.Letter)
+    func showLetterDeselected(_ letter: GameLevelEntity.Letter)
+    func showInputLetterDeselected(_ letter: GamePresenter.PresentableModel.InputModel)
+    func showLetterRemoved(_ letter: GameLevelEntity.Letter)
 }
 
 class GamePresenter {
@@ -44,6 +49,8 @@ class GamePresenter {
     var selectInputLetter: SelectInputLetter!
     var advanceToNextLevel: AdvanceToNextLevel!
     var resetGame: ResetGame!
+    var promptRevealLetter: PromptRevealLetter!
+    var promptRemoveInvalidLetters: PromptRemoveInvalidLetters!
     
     var onGameComplete: (() -> Void)!
     
@@ -79,7 +86,7 @@ class GamePresenter {
         
         if let inputLetter = resultInputLetter {
             self.syncPresentableModelState()
-            let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+            let input = self.presentableModel(for: inputLetter)
             self.presentable.showLetterSelected(letter, inputLetter: input)
         }
     }
@@ -89,7 +96,7 @@ class GamePresenter {
             let result = self.selectInputLetter.select(inputLetter)
             if let letter = result {
                 self.syncPresentableModelState()
-                let input = self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
+                let input = self.presentableModel(for: inputLetter)
                 self.presentable.showInputLetterRemoved(input, letter: letter)
             }
         }
@@ -98,6 +105,21 @@ class GamePresenter {
     func advanceToNextLevelAction() {
         self.advanceToNextLevel.advance()
         self.showCurrentLevel()
+    }
+    
+    func promptRevealLetterAction() {
+        let result = self.promptRevealLetter.reveal()
+        result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
+        result.affectedLetter.map({ self.presentable.showLetterDeselected($0) })
+        self.presentable.showLetterSelected(result.revealedLetter)
+        self.presentable.showInputLetterRevealed(self.presentableModel(for: result.revealedInputLetter))
+        
+    }
+    
+    func promptRemoveInvalidLettersAction() {
+        let result = self.promptRemoveInvalidLetters.remove()
+        result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
+        self.presentable.showLetterRemoved(result.letter)
     }
     
     func finishGameAction() {
@@ -134,6 +156,10 @@ class GamePresenter {
             return input
         })
         self.presentableModel.isWrongWord = level.hasFreeInput == false
+    }
+    
+    fileprivate func presentableModel(for inputLetter: GameLevelEntity.InputLetter) -> PresentableModel.InputModel {
+        return self.presentableModel.input.first(where: { $0.inputLetter === inputLetter})!
     }
     
 }
