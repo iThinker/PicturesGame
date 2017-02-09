@@ -8,24 +8,6 @@
 
 import Foundation
 
-extension String.CharacterView {
-    
-    subscript(index: Int) -> Character {
-        get {
-            return self[self.index(self.startIndex, offsetBy: index)]
-        }
-    }
-    
-}
-
-extension Array {
-    
-    mutating func remove(at indicies: IndexSet) {
-        indicies.reversed().forEach({ self.remove(at: $0) })
-    }
-    
-}
-
 class PromptRevealLetter {
     
     var getGame: GetGame!
