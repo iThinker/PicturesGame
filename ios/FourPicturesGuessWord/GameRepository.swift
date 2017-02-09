@@ -24,6 +24,10 @@ class GameRepository {
                 letter.isRevealed = dict["isRevealed"] as! Bool
                 return letter
             })
+            let savedLetters = savedGameState["letters"] as! [[String: Any]]
+            for (letter, dict) in zip(level.availableLetters, savedLetters) {
+                letter.isRemoved = dict["isRemoved"] as! Bool
+            }
             level.inputLetters.forEach({ inputLetter in
                 let letter = level.letter(for: inputLetter)
                 letter?.isSelected = true
@@ -51,8 +55,13 @@ class GameRepository {
         var currentStateDict: [String: Any] = [:]
         let level = game.currentLevel!
         currentStateDict["levelNumber"] = level.index
-        currentStateDict["input"] = level.inputLetters.map({ return ["letterIndex": $0.letterIndex ?? -1,
-                                                                     "isRevealed": $0.isRevealed] })
+        currentStateDict["input"] = level.inputLetters.map({
+            return ["letterIndex": $0.letterIndex ?? -1,
+                    "isRevealed": $0.isRevealed]
+        })
+        currentStateDict["letters"] = level.availableLetters.map({
+            return ["isRemoved": $0.isRemoved]
+        })
         UserDefaults.standard.set(currentStateDict, forKey: "savedGameState")
         UserDefaults.standard.synchronize()
         GameRepository.game = game
