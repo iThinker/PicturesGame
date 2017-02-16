@@ -60,6 +60,26 @@ class GameViewController: UIViewController {
 
 extension GameViewController: GamePresentable {
     
+    func showInputLetterDeselected(_ inputLetter: GamePresenter.PresentableModel.InputModel) {
+        self.lettersInputView.inputUpdated(inputLetter)
+    }
+
+    func showLetterRemoved(_ letter: GameLevelEntity.Letter) {
+        self.lettersView.letterUpdated(letter)
+    }
+
+    func showLetterDeselected(_ letter: GameLevelEntity.Letter) {
+        self.lettersView.letterUpdated(letter)
+    }
+
+    func showLetterSelected(_ letter: GameLevelEntity.Letter) {
+        self.lettersView.letterUpdated(letter)
+    }
+    
+    func showInputLetterRevealed(_ inputLetter: GamePresenter.PresentableModel.InputModel) {
+        self.lettersInputView.inputUpdated(inputLetter)
+    }
+    
     func show(_ presentableModel: GamePresenter.PresentableModel) {
         self.imagesView.showImages(presentableModel.images)
         self.lettersView.letters = presentableModel.letters

@@ -18,7 +18,7 @@ protocol GamePresentable: class {
     func showInputLetterRevealed(_ inputLetter: GamePresenter.PresentableModel.InputModel)
     func showLetterSelected(_ letter: GameLevelEntity.Letter)
     func showLetterDeselected(_ letter: GameLevelEntity.Letter)
-    func showInputLetterDeselected(_ letter: GamePresenter.PresentableModel.InputModel)
+    func showInputLetterDeselected(_ inputLetter: GamePresenter.PresentableModel.InputModel)
     func showLetterRemoved(_ letter: GameLevelEntity.Letter)
 }
 
@@ -92,13 +92,12 @@ class GamePresenter {
     }
     
     func select(_ input: GamePresenter.PresentableModel.InputModel) {
-        if let inputLetter = input.inputLetter {
-            let result = self.selectInputLetter.select(inputLetter)
-            if let letter = result {
-                self.syncPresentableModelState()
-                let input = self.presentableModel(for: inputLetter)
-                self.presentable.showInputLetterRemoved(input, letter: letter)
-            }
+        let inputLetter = input.inputLetter!
+        let result = self.selectInputLetter.select(inputLetter)
+        if let letter = result {
+            self.syncPresentableModelState()
+            let input = self.presentableModel(for: inputLetter)
+            self.presentable.showInputLetterRemoved(input, letter: letter)
         }
     }
     
