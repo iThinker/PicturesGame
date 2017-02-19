@@ -108,6 +108,7 @@ class GamePresenter {
     
     func promptRevealLetterAction() {
         let result = self.promptRevealLetter.reveal()
+        self.syncPresentableModelState()
         result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
         result.affectedLetter.map({ self.presentable.showLetterDeselected($0) })
         self.presentable.showLetterSelected(result.revealedLetter)
@@ -117,6 +118,7 @@ class GamePresenter {
     
     func promptRemoveInvalidLettersAction() {
         let result = self.promptRemoveInvalidLetters.remove()
+        self.syncPresentableModelState()
         result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
         self.presentable.showLetterRemoved(result.letter)
     }

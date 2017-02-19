@@ -31,6 +31,14 @@ class GameViewController: UIViewController {
         self.presenter.startPresentation()
     }
     
+    @IBAction func promptRevealLetterAction(_ sender: AnyObject) {
+        self.presenter.promptRevealLetterAction()
+    }
+    
+    @IBAction func promptRemoveInvalidLettersAction(_ sender: AnyObject) {
+        self.presenter.promptRemoveInvalidLettersAction()
+    }
+    
     fileprivate func configureImagesView() {
         self.imagesView = GameImagesView.loadDefaultNib()!
         self.imagesContainerView.embed(self.imagesView)

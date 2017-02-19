@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,33 +23,67 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-Z4-ol9" userLabel="View - Images Container">
-                    <rect key="frame" x="20" y="20" width="280" height="280"/>
+                    <rect key="frame" x="20" y="20" width="220" height="220"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mnn-Z4-ol9" secondAttribute="height" id="iDl-DS-69o"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2V-xl-Goo" userLabel="View - Input Container">
-                    <rect key="frame" x="20" y="300" width="280" height="148"/>
+                    <rect key="frame" x="20" y="240" width="280" height="208"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="GLL-j8-agk" userLabel="View - Letters Container">
                     <rect key="frame" x="20" y="448" width="280" height="100"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bX4-Ah-kIA" userLabel="View - Prompts Container">
+                    <rect key="frame" x="260" y="85" width="40" height="90"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7o-aS-u51" userLabel="Button - Prompt Remove Invalid Letters">
+                            <rect key="frame" x="0.0" y="50" width="40" height="40"/>
+                            <state key="normal" title="RI"/>
+                            <connections>
+                                <action selector="promptRemoveInvalidLettersAction:" destination="-1" eventType="touchUpInside" id="hHe-hS-fvT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEs-SU-k4r" userLabel="Button - Prompt Reveal Letter">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <state key="normal" title="RL"/>
+                            <connections>
+                                <action selector="promptRevealLetterAction:" destination="-1" eventType="touchUpInside" id="CHa-RX-aTQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="3Fx-AK-mbK"/>
+                        <constraint firstAttribute="width" constant="40" id="86T-Jn-0jo"/>
+                        <constraint firstAttribute="trailing" secondItem="MEs-SU-k4r" secondAttribute="trailing" id="BQS-29-3n8"/>
+                        <constraint firstItem="g7o-aS-u51" firstAttribute="top" secondItem="MEs-SU-k4r" secondAttribute="bottom" constant="10" id="JBF-hA-oQX"/>
+                        <constraint firstItem="MEs-SU-k4r" firstAttribute="top" secondItem="bX4-Ah-kIA" secondAttribute="top" id="X4K-K8-JeL"/>
+                        <constraint firstAttribute="trailing" secondItem="g7o-aS-u51" secondAttribute="trailing" id="YBm-J9-0a5"/>
+                        <constraint firstAttribute="bottom" secondItem="g7o-aS-u51" secondAttribute="bottom" id="dvd-ga-Jjg"/>
+                        <constraint firstItem="MEs-SU-k4r" firstAttribute="leading" secondItem="bX4-Ah-kIA" secondAttribute="leading" id="ghQ-75-aNS"/>
+                        <constraint firstItem="g7o-aS-u51" firstAttribute="height" secondItem="MEs-SU-k4r" secondAttribute="height" id="vMU-x4-GGK"/>
+                        <constraint firstItem="g7o-aS-u51" firstAttribute="leading" secondItem="bX4-Ah-kIA" secondAttribute="leading" id="vWr-en-sEL"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="w2V-xl-Goo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1Sf-E5-B8y"/>
+                <constraint firstItem="bX4-Ah-kIA" firstAttribute="leading" secondItem="mnn-Z4-ol9" secondAttribute="trailing" constant="20" id="2EA-hG-BTv"/>
                 <constraint firstItem="GLL-j8-agk" firstAttribute="top" secondItem="w2V-xl-Goo" secondAttribute="bottom" id="2LE-jU-bfK"/>
                 <constraint firstItem="w2V-xl-Goo" firstAttribute="top" secondItem="mnn-Z4-ol9" secondAttribute="bottom" id="7GX-b0-bTT"/>
                 <constraint firstItem="mnn-Z4-ol9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="9Fk-fq-udv"/>
                 <constraint firstAttribute="trailing" secondItem="GLL-j8-agk" secondAttribute="trailing" constant="20" id="GcM-PO-yAc"/>
                 <constraint firstItem="GLL-j8-agk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Lfh-Gm-IxB"/>
                 <constraint firstAttribute="bottom" secondItem="GLL-j8-agk" secondAttribute="bottom" constant="20" id="Tas-Gi-mMi"/>
+                <constraint firstItem="bX4-Ah-kIA" firstAttribute="centerY" secondItem="mnn-Z4-ol9" secondAttribute="centerY" id="VmD-TS-bvL"/>
                 <constraint firstAttribute="trailing" secondItem="w2V-xl-Goo" secondAttribute="trailing" constant="20" id="cZt-f3-zax"/>
                 <constraint firstItem="mnn-Z4-ol9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="d8l-Qh-Uhs"/>
-                <constraint firstAttribute="trailing" secondItem="mnn-Z4-ol9" secondAttribute="trailing" constant="20" id="mQf-au-ECH"/>
+                <constraint firstAttribute="trailing" secondItem="bX4-Ah-kIA" secondAttribute="trailing" constant="20" id="tdF-Ly-AqO"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
