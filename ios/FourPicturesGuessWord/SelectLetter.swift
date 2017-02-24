@@ -35,7 +35,7 @@ class SelectLetter {
         self.saveGame.save(game)
         
         if level.isSolved {
-            if game.numberOfLevels <= level.index + 1 {
+            if game.isCurrentLevelLast {
                 return .gameComplete(game, result)
             }
             else {

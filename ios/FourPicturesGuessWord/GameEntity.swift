@@ -12,5 +12,8 @@ class GameEntity {
     
     var numberOfLevels: Int = 0
     var currentLevel: GameLevelEntity!
+    var isCurrentLevelLast: Bool {
+        return self.numberOfLevels == self.currentLevel.index + 1
+    }
     
 }

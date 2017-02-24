@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6207A275805B327E47CB6017 /* Pods_FourPicturesGuessWord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD405E1221E1A32AC27D6BD /* Pods_FourPicturesGuessWord.framework */; };
 		BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328B1E00DE5600D89E9E /* SelectLetter.swift */; };
 		BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */; };
 		BF1A15FD1E415C8F0027B9C6 /* PromptRevealLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A15FC1E415C8F0027B9C6 /* PromptRevealLetter.swift */; };
@@ -53,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10104E4E15BD653B9CA6D379 /* Pods-FourPicturesGuessWord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourPicturesGuessWord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FourPicturesGuessWord/Pods-FourPicturesGuessWord.debug.xcconfig"; sourceTree = "<group>"; };
+		2CD405E1221E1A32AC27D6BD /* Pods_FourPicturesGuessWord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FourPicturesGuessWord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		588A2DF39CB28AE80D0A01E7 /* Pods-FourPicturesGuessWord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FourPicturesGuessWord.release.xcconfig"; path = "Pods/Target Support Files/Pods-FourPicturesGuessWord/Pods-FourPicturesGuessWord.release.xcconfig"; sourceTree = "<group>"; };
 		BF05328B1E00DE5600D89E9E /* SelectLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLetter.swift; sourceTree = "<group>"; };
 		BF05328D1E00E7D900D89E9E /* SelectInputLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectInputLetter.swift; sourceTree = "<group>"; };
 		BF1A15FC1E415C8F0027B9C6 /* PromptRevealLetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptRevealLetter.swift; sourceTree = "<group>"; };
@@ -105,12 +109,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6207A275805B327E47CB6017 /* Pods_FourPicturesGuessWord.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156A8D1FCB74F54D7C790D30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10104E4E15BD653B9CA6D379 /* Pods-FourPicturesGuessWord.debug.xcconfig */,
+				588A2DF39CB28AE80D0A01E7 /* Pods-FourPicturesGuessWord.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BF1A15FB1E415BF70027B9C6 /* Hints */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +158,8 @@
 			children = (
 				BFC6C8091DFE2A5C0099CB00 /* FourPicturesGuessWord */,
 				BFC6C8081DFE2A5C0099CB00 /* Products */,
+				156A8D1FCB74F54D7C790D30 /* Pods */,
+				EDB35360ED403490632545B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -402,6 +418,14 @@
 			name = "Reuse Identifier";
 			sourceTree = "<group>";
 		};
+		EDB35360ED403490632545B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CD405E1221E1A32AC27D6BD /* Pods_FourPicturesGuessWord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,9 +433,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFC6C8191DFE2A5C0099CB00 /* Build configuration list for PBXNativeTarget "FourPicturesGuessWord" */;
 			buildPhases = (
+				1088A9483E6BC35BABC39DF2 /* [CP] Check Pods Manifest.lock */,
 				BFC6C8031DFE2A5C0099CB00 /* Sources */,
 				BFC6C8041DFE2A5C0099CB00 /* Frameworks */,
 				BFC6C8051DFE2A5C0099CB00 /* Resources */,
+				262B641E75A7785BB8BE8B65 /* [CP] Embed Pods Frameworks */,
+				C368A0A80557ACEB7B1BF03E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,6 +505,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1088A9483E6BC35BABC39DF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		262B641E75A7785BB8BE8B65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourPicturesGuessWord/Pods-FourPicturesGuessWord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C368A0A80557ACEB7B1BF03E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FourPicturesGuessWord/Pods-FourPicturesGuessWord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFC6C8031DFE2A5C0099CB00 /* Sources */ = {
@@ -627,6 +702,7 @@
 		};
 		BFC6C81A1DFE2A5C0099CB00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10104E4E15BD653B9CA6D379 /* Pods-FourPicturesGuessWord.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4Q5YYL9WMS;
@@ -642,6 +718,7 @@
 		};
 		BFC6C81B1DFE2A5C0099CB00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 588A2DF39CB28AE80D0A01E7 /* Pods-FourPicturesGuessWord.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4Q5YYL9WMS;

@@ -19,6 +19,7 @@ class PromptRevealLetter {
         var affectedInputLetter: GameLevelEntity.InputLetter?
         var revealedLetter: GameLevelEntity.Letter
         var affectedLetter: GameLevelEntity.Letter?
+        var isLevelSolved = false
         
     }
     
@@ -43,7 +44,8 @@ class PromptRevealLetter {
         return Result(revealedInputLetter: nextUnrevealedInputLetter,
                       affectedInputLetter: oldTakenInputLetter,
                       revealedLetter: revealedLetter,
-                      affectedLetter: oldTakenLetter)
+                      affectedLetter: oldTakenLetter,
+                      isLevelSolved: level.isSolved)
     }
     
     fileprivate func findNextUnrevealedLetterIndex(in level: GameLevelEntity) -> Int {

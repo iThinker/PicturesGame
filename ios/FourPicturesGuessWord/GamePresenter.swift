@@ -20,6 +20,7 @@ protocol GamePresentable: class {
     func showLetterDeselected(_ letter: GameLevelEntity.Letter)
     func showInputLetterDeselected(_ inputLetter: GamePresenter.PresentableModel.InputModel)
     func showLetterRemoved(_ letter: GameLevelEntity.Letter)
+    func showMessage(_ message: String)
 }
 
 class GamePresenter {
@@ -30,6 +31,7 @@ class GamePresenter {
             
             var letter: GameLevelEntity.Letter?
             var inputLetter: GameLevelEntity.InputLetter!
+            var isEnabled = true
             var index = 0
             
         }
@@ -113,14 +115,30 @@ class GamePresenter {
         result.affectedLetter.map({ self.presentable.showLetterDeselected($0) })
         self.presentable.showLetterSelected(result.revealedLetter)
         self.presentable.showInputLetterRevealed(self.presentableModel(for: result.revealedInputLetter))
-        
+        if result.isLevelSolved {
+            let game = self.getGame.get()
+            let level = game.currentLevel!
+            if game.isCurrentLevelLast {
+                self.presentable.showGameComplete()
+            }
+            else {
+                self.presentable.showLevelComplete(levelNumber: level.index)
+            }
+        }
     }
     
     func promptRemoveInvalidLettersAction() {
-        let result = self.promptRemoveInvalidLetters.remove()
-        self.syncPresentableModelState()
-        result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
-        self.presentable.showLetterRemoved(result.letter)
+        let game = self.getGame.get()
+        let level = game.currentLevel!
+        if level.canPromptRemoveInvalidLetters {
+            let result = self.promptRemoveInvalidLetters.remove()
+            self.syncPresentableModelState()
+            result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
+            self.presentable.showLetterRemoved(result.letter)
+        }
+        else {
+            self.presentable.showMessage(NSLocalizedString("Cannot reveal letter", comment: ""))
+        }
     }
     
     func finishGameAction() {
@@ -152,6 +170,7 @@ class GamePresenter {
             let input = PresentableModel.InputModel()
             input.inputLetter = inputLetter
             input.letter = level.letter(for: inputLetter)
+            input.isEnabled = !inputLetter.isRevealed
             input.index = i
             i += 1
             return input

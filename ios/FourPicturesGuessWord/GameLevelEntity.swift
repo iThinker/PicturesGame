@@ -45,6 +45,10 @@ class GameLevelEntity {
         return self.solutionWord == self.inputWord
     }
     
+    var canPromptRemoveInvalidLetters: Bool {
+        return self.availableLetters.filter({ $0.isRemoved == false }).count > self.inputLetters.count
+    }
+    
     func append(_ letter: Letter) -> InputLetter {
         assert(self.hasFreeInput == true)
         letter.isSelected = true

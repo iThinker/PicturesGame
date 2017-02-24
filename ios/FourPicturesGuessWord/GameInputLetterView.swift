@@ -19,6 +19,7 @@ class GameInputLetterView: UIView {
                 self.button.setTitle(String(letter.character), for: .normal)
                 let letterColor = inputLetter.inputLetter.isRevealed ? UIColor.green : UIColor.blue
                 self.button.setTitleColor(letterColor, for: .normal)
+                self.button.isUserInteractionEnabled = inputLetter.isEnabled
             }
             else {
                 self.button.isHidden = true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class GameViewController: UIViewController {
     
@@ -126,6 +127,10 @@ extension GameViewController: GamePresentable {
             self?.presenter.finishGameAction()
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showMessage(_ message: String) {
+        SVProgressHUD.showInfo(withStatus: message)
     }
     
 }
