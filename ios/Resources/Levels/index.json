@@ -1,18 +1,14 @@
 [
  {
- "letters": "zxcvbnqwerty",
- "solution": "qwer"
+ "letters": "hizagwodklte",
+ "solution": "light"
  },
  {
- "letters": "qwertyuioasd",
- "solution": "qwer"
+ "letters": "saiharswctqr",
+ "solution": "christmas"
  },
  {
- "letters": "asdqwertyghj",
- "solution": "qwer"
- },
- {
- "letters": "kjhewqytrzxc",
- "solution": "qwer"
+ "letters": "tropsyfqeecn",
+ "solution": "present"
  }
 ]

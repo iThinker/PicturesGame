@@ -137,7 +137,7 @@ class GamePresenter {
             self.presentable.showLetterRemoved(result.letter)
         }
         else {
-            self.presentable.showMessage(NSLocalizedString("Cannot reveal letter", comment: ""))
+            self.presentable.showMessage(NSLocalizedString("Cannot remove any letter", comment: ""))
         }
     }
     

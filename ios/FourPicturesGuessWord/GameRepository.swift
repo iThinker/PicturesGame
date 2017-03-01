@@ -104,7 +104,7 @@ class GameRepository {
         var images: [String] = []
         let directory = "Levels/\(index)"
         for i in 0...3 {
-            let path = Bundle.main.path(forResource: "\(i)", ofType: "png", inDirectory: directory)
+            let path = Bundle.main.path(forResource: "\(i)", ofType: "jpeg", inDirectory: directory)
             images.append(path!)
         }
         level.images = images

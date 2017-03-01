@@ -174,9 +174,9 @@
 		BFC6C8091DFE2A5C0099CB00 /* FourPicturesGuessWord */ = {
 			isa = PBXGroup;
 			children = (
-				BFC6C81E1DFE2D9D0099CB00 /* Resources */,
 				BFC6C81D1DFE2D970099CB00 /* Common */,
 				BFC6C81C1DFE2D900099CB00 /* Modules */,
+				BFC6C81E1DFE2D9D0099CB00 /* Resources */,
 			);
 			path = FourPicturesGuessWord;
 			sourceTree = "<group>";
