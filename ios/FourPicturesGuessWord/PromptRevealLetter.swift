@@ -30,6 +30,7 @@ class PromptRevealLetter {
         let nextUnrevealedIndex = self.findNextUnrevealedLetterIndex(in: level)
         let nextUnrevealedInputLetter = level.inputLetters[nextUnrevealedIndex]
         let oldTakenLetter = level.letter(for: nextUnrevealedInputLetter)
+        oldTakenLetter?.isSelected = false
         let revealedLetter = self.findSuitableLetter(in: level, inputLetterIndex: nextUnrevealedIndex)
         let oldTakenInputLetter = self.findAffectedInputLetter(in: level, revealedLetter: revealedLetter)
         oldTakenInputLetter?.letterIndex = nil
