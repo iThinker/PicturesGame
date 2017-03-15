@@ -46,21 +46,13 @@ class PromptRemoveInvalidLetters {
                     unrevealedLetters.removeAll(of: letter)
                 }
         }
-        unrevealedLetters = unrevealedLetters.sorted {
-            letter1, letter2 in
-            if letter1.isSelected == letter2.isSelected {
-                return unrevealedLetters.index(where: { $0 === letter2 })! >
-                    unrevealedLetters.index(where: { $0 === letter1 })!
-            }
-            else {
-                return !(letter1.isSelected && !letter2.isSelected)
-            }
-        }
         var letterToRemove: GameLevelEntity.Letter? = nil
-        for letter in unrevealedLetters {
-            let character = letter.character!
-            if unrevealedCharacters.contains(character) {
-                unrevealedCharacters.remove(character)
+        while letterToRemove == nil {
+            let index = Int(arc4random_uniform(UInt32(unrevealedLetters.count)))
+            let letter = unrevealedLetters[index]
+            if unrevealedCharacters.contains(letter.character) {
+                unrevealedCharacters.remove(letter.character)
+                unrevealedLetters.removeAll(of: letter)
             }
             else {
                 letterToRemove = letter
