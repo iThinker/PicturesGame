@@ -43,7 +43,7 @@ class GamePresenter {
         
     }
     
-    var presentable: GamePresentable!
+    weak var presentable: GamePresentable!
     var presentableModel: PresentableModel!
     
     var getGame: GetGame!
