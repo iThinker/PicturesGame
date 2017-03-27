@@ -14,7 +14,6 @@
 		BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */; };
 		BF1A16171E4ABB170027B9C6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A16161E4ABB170027B9C6 /* Array+Extensions.swift */; };
 		BF1A16191E4ABB3A0027B9C6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A16181E4ABB3A0027B9C6 /* String+Extensions.swift */; };
-		BF1D5F551E024DFD00850BAB /* stub0.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1D5F531E024DFD00850BAB /* stub0.png */; };
 		BF818F971E3862F700178511 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = BF818F961E3862F700178511 /* Levels */; };
 		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
 		BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD31E038D25006EAACE /* SaveGame.swift */; };
@@ -50,7 +49,6 @@
 		BFFACC211E0A1F4E00444BAD /* UIView+NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFACC201E0A1F4E00444BAD /* UIView+NibLoading.swift */; };
 		BFFACC281E10616D00444BAD /* CollectionViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFACC271E10616D00444BAD /* CollectionViewContainerCell.swift */; };
 		BFFACC2D1E10656500444BAD /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFACC2C1E10656500444BAD /* ReuseIdentifier.swift */; };
-		BFFACC301E10D2FD00444BAD /* stub1.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFACC2F1E10D2FD00444BAD /* stub1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +61,6 @@
 		BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptRemoveInvalidLetters.swift; sourceTree = "<group>"; };
 		BF1A16161E4ABB170027B9C6 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		BF1A16181E4ABB3A0027B9C6 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		BF1D5F531E024DFD00850BAB /* stub0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub0.png; path = Resources/Stubs/stub0.png; sourceTree = SOURCE_ROOT; };
 		BF818F961E3862F700178511 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Levels; path = Resources/Levels; sourceTree = SOURCE_ROOT; };
 		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
 		BFC10AD31E038D25006EAACE /* SaveGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGame.swift; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		BFFACC201E0A1F4E00444BAD /* UIView+NibLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoading.swift"; sourceTree = "<group>"; };
 		BFFACC271E10616D00444BAD /* CollectionViewContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewContainerCell.swift; sourceTree = "<group>"; };
 		BFFACC2C1E10656500444BAD /* ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
-		BFFACC2F1E10D2FD00444BAD /* stub1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stub1.png; path = Resources/Stubs/stub1.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,15 +128,6 @@
 				BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */,
 			);
 			name = Hints;
-			sourceTree = "<group>";
-		};
-		BF1D5F521E024D9C00850BAB /* Stub Images */ = {
-			isa = PBXGroup;
-			children = (
-				BF1D5F531E024DFD00850BAB /* stub0.png */,
-				BFFACC2F1E10D2FD00444BAD /* stub1.png */,
-			);
-			name = "Stub Images";
 			sourceTree = "<group>";
 		};
 		BFC10ACF1E038ACD006EAACE /* View */ = {
@@ -207,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				BF818F961E3862F700178511 /* Levels */,
-				BF1D5F521E024D9C00850BAB /* Stub Images */,
 				BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -493,8 +479,6 @@
 				BFF2152B1E0641960083DC7D /* GameInputLetterView.xib in Resources */,
 				BFC6C82E1DFE33330099CB00 /* MainMenuViewController.xib in Resources */,
 				BFF215171E056D910083DC7D /* GameViewController.xib in Resources */,
-				BF1D5F551E024DFD00850BAB /* stub0.png in Resources */,
-				BFFACC301E10D2FD00444BAD /* stub1.png in Resources */,
 				BFF2152F1E06452C0083DC7D /* GameLetterView.xib in Resources */,
 				BFF215271E063E2E0083DC7D /* GameInputView.xib in Resources */,
 				BFF215231E063E100083DC7D /* GameLettersView.xib in Resources */,
