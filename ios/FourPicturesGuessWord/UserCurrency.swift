@@ -21,6 +21,10 @@ class UserCurrency {
         }
     }
     
+    struct AmountChangedDomainEvent: DomainEvent {
+        var newAmount: Int = 0
+    }
+    
     var repository: CurrencyRepository!
     
     func getAmount() -> Int {
@@ -28,22 +32,29 @@ class UserCurrency {
     }
     
     func appendAmount(_ amount: Int) throws {
-        let oldAmount = try self.repository.getAmount()
-        let newAmount = oldAmount + amount
-        try self.repository.setAmount(newAmount)
+        try self.updateAmount { (oldAmount) -> Int in
+            return oldAmount + amount
+        }
     }
     
     func substractAmount(_ amount: Int) throws {
         try self.checkIfEnoughCurrencyToSubstract(amount: amount)
-        let oldAmount = try self.repository.getAmount()
-        let newAmount = oldAmount - amount
-        try self.repository.setAmount(newAmount)
+        try self.updateAmount { (oldAmount) -> Int in
+            return oldAmount - amount
+        }
     }
     
     fileprivate func checkIfEnoughCurrencyToSubstract(amount: Int) throws {
         if amount > self.getAmount() {
             throw Error.notEnoughCurrency
         }
+    }
+    
+    fileprivate func updateAmount(with updater: (Int) -> Int) throws {
+        let oldAmount = try self.repository.getAmount()
+        let newAmount = updater(oldAmount)
+        try self.repository.setAmount(newAmount)
+        AmountChangedDomainEvent(newAmount: newAmount).post()
     }
     
 }

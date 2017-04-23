@@ -28,6 +28,7 @@ class GameFactory {
         presenter.resetGame = self.resetGameInteractor()
         presenter.promptRevealLetter = self.promptRevealLetter()
         presenter.promptRemoveInvalidLetters = self.promptRemoveInvalidLetters()
+        presenter.userCurrencyPresenter = CurrencyFactory.shared.presenter()
         return presenter
     }
     

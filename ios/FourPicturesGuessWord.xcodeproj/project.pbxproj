@@ -17,6 +17,9 @@
 		BF46720D1EAC1735007DC0C0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46720C1EAC1735007DC0C0 /* Logger.swift */; };
 		BF4672101EAC1A96007DC0C0 /* UserCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46720F1EAC1A96007DC0C0 /* UserCurrency.swift */; };
 		BF4672131EAC31E5007DC0C0 /* CurrencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672121EAC31E5007DC0C0 /* CurrencyFactory.swift */; };
+		BF4672161EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672151EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift */; };
+		BF4672191EACED5A007DC0C0 /* UserCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */; };
+		BF46721C1EACEDF5007DC0C0 /* UserCurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */; };
 		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
 		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
 		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
@@ -70,6 +73,9 @@
 		BF46720C1EAC1735007DC0C0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BF46720F1EAC1A96007DC0C0 /* UserCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrency.swift; sourceTree = "<group>"; };
 		BF4672121EAC31E5007DC0C0 /* CurrencyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFactory.swift; sourceTree = "<group>"; };
+		BF4672151EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrencyPresenter.swift; sourceTree = "<group>"; };
+		BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrencyView.swift; sourceTree = "<group>"; };
+		BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCurrencyView.xib; sourceTree = "<group>"; };
 		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
 		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4672111EAC31CB007DC0C0 /* Factory */,
+				BF46721A1EACED64007DC0C0 /* View */,
 				BF4672141EAC3742007DC0C0 /* Presenter */,
 				BF46720E1EAC1A79007DC0C0 /* Entity */,
 				BF4FCA8A1EA9A99C00769889 /* Repository */,
@@ -180,8 +187,18 @@
 		BF4672141EAC3742007DC0C0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672151EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		BF46721A1EACED64007DC0C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */,
+				BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BF4FCA7F1EA9901700769889 /* Domain Event */ = {
@@ -274,7 +291,7 @@
 				BFFACC251E105E1F00444BAD /* Collection View */,
 				BFFACC1F1E0A1F0600444BAD /* Extensions */,
 				BFFACC191E0A0E9100444BAD /* View Embedder */,
-				BFC6C8251DFE31FD0099CB00 /* Main Router */,
+				BFC6C8251DFE31FD0099CB00 /* Main Navigator */,
 				BFC6C81F1DFE2DAA0099CB00 /* Supporting Files */,
 			);
 			name = Common;
@@ -327,12 +344,12 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		BFC6C8251DFE31FD0099CB00 /* Main Router */ = {
+		BFC6C8251DFE31FD0099CB00 /* Main Navigator */ = {
 			isa = PBXGroup;
 			children = (
 				BFC6C8261DFE32250099CB00 /* MainNavigator.swift */,
 			);
-			name = "Main Router";
+			name = "Main Navigator";
 			sourceTree = "<group>";
 		};
 		BFC6C8281DFE327C0099CB00 /* Factory */ = {
@@ -567,6 +584,7 @@
 			files = (
 				BFC6C8151DFE2A5C0099CB00 /* LaunchScreen.storyboard in Resources */,
 				BFF2152B1E0641960083DC7D /* GameInputLetterView.xib in Resources */,
+				BF46721C1EACEDF5007DC0C0 /* UserCurrencyView.xib in Resources */,
 				BFC6C82E1DFE33330099CB00 /* MainMenuViewController.xib in Resources */,
 				BFF215171E056D910083DC7D /* GameViewController.xib in Resources */,
 				BFF2152F1E06452C0083DC7D /* GameLetterView.xib in Resources */,
@@ -643,6 +661,7 @@
 				BFF215291E0640290083DC7D /* GameInputLetterView.swift in Sources */,
 				BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */,
 				BFC6C8371DFE3EA40099CB00 /* ResetGame.swift in Sources */,
+				BF4672161EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift in Sources */,
 				BFF2152D1E0645170083DC7D /* GameLetterView.swift in Sources */,
 				BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */,
 				BFC10ADE1E04D6CE006EAACE /* GameViewController.swift in Sources */,
@@ -656,6 +675,7 @@
 				BFF215251E063E1E0083DC7D /* GameInputView.swift in Sources */,
 				BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */,
 				BFF215211E063DFA0083DC7D /* GameLettersView.swift in Sources */,
+				BF4672191EACED5A007DC0C0 /* UserCurrencyView.swift in Sources */,
 				BFFACC281E10616D00444BAD /* CollectionViewContainerCell.swift in Sources */,
 				BFC6C83E1DFE3EFD0099CB00 /* GameEntity.swift in Sources */,
 				BFC6C8271DFE32250099CB00 /* MainNavigator.swift in Sources */,

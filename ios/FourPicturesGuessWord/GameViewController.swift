@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     fileprivate var imagesView: GameImagesView!
     fileprivate var lettersInputView: GameInputView!
     fileprivate var lettersView: GameLettersView!
+    fileprivate var userCurrencyView = UserCurrencyView.loadDefaultNib()!
     
     var presenter: GamePresenter!
     
@@ -27,6 +28,8 @@ class GameViewController: UIViewController {
         self.configureImagesView()
         self.configureInputView()
         self.configureLettersView()
+        self.navigationItem.titleView = self.userCurrencyView
+        self.navigationItem.setHidesBackButton(true, animated: false)
         
         self.presenter.presentable = self
         self.presenter.startPresentation()
@@ -72,6 +75,10 @@ extension GameViewController: GamePresentable {
     func showInputLetterDeselected(_ inputLetter: GamePresenter.PresentableModel.InputModel) {
         self.lettersInputView.inputUpdated(inputLetter)
     }
+    
+    func show(userCurrencyPresenter: UserCurrencyPresenter) {
+        self.userCurrencyView.show(userCurrencyPresenter)
+    }
 
     func showLetterRemoved(_ letter: GameLevelEntity.Letter) {
         self.lettersView.letterUpdated(letter)
@@ -96,7 +103,7 @@ extension GameViewController: GamePresentable {
     }
     
     func showNoInputSpaceLeft() {
-        print("No Input \n")
+        self.showMessage(NSLocalizedString("No Input space left", comment: ""))
     }
     
     func showLevelComplete(levelNumber: Int) {

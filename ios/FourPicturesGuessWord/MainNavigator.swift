@@ -22,6 +22,7 @@ class MainNavigator {
         let viewController = MainMenuFactory.shared.mainMenuViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
+        navigationController.navigationBar.isTranslucent = false
         self.navigationController = navigationController
         let router = MainMenuRouter()
         router.navigationController = navigationController

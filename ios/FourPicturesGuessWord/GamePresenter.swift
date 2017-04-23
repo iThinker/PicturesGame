@@ -10,6 +10,7 @@ import UIKit
 
 protocol GamePresentable: class {
     func show(_ presentableModel: GamePresenter.PresentableModel)
+    func show(userCurrencyPresenter: UserCurrencyPresenter)
     func showNoInputSpaceLeft()
     func showLevelComplete(levelNumber: Int)
     func showGameComplete()
@@ -54,11 +55,13 @@ class GamePresenter {
     var resetGame: ResetGame!
     var promptRevealLetter: PromptRevealLetter!
     var promptRemoveInvalidLetters: PromptRemoveInvalidLetters!
+    var userCurrencyPresenter: UserCurrencyPresenter!
     
     var onGameComplete: (() -> Void)!
     
     func startPresentation() {
         self.showCurrentLevel()
+        self.presentable.show(userCurrencyPresenter: self.userCurrencyPresenter)
     }
     
     func select(_ letter: GameLevelEntity.Letter) {

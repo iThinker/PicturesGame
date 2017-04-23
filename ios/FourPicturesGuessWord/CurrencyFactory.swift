@@ -23,4 +23,10 @@ class CurrencyFactory {
         return CurrencyRepository()
     }
     
+    func presenter() -> UserCurrencyPresenter {
+        let presenter = UserCurrencyPresenter()
+        presenter.userCurrency = CurrencyFactory.sharedUserCurrency
+        return presenter
+    }
+    
 }
