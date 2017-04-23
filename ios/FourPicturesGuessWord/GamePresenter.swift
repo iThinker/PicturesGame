@@ -21,6 +21,7 @@ protocol GamePresentable: class {
     func showInputLetterDeselected(_ inputLetter: GamePresenter.PresentableModel.InputModel)
     func showLetterRemoved(_ letter: GameLevelEntity.Letter)
     func showMessage(_ message: String)
+    func showError(_ error: Error)
 }
 
 class GamePresenter {
@@ -109,21 +110,27 @@ class GamePresenter {
     }
     
     func promptRevealLetterAction() {
-        let result = self.promptRevealLetter.reveal()
-        self.syncPresentableModelState()
-        result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
-        result.affectedLetter.map({ self.presentable.showLetterDeselected($0) })
-        self.presentable.showLetterSelected(result.revealedLetter)
-        self.presentable.showInputLetterRevealed(self.presentableModel(for: result.revealedInputLetter))
-        if result.isLevelSolved {
-            let game = self.getGame.get()
-            let level = game.currentLevel!
-            if game.isCurrentLevelLast {
-                self.presentable.showGameComplete()
+        do {
+            let result = try self.promptRevealLetter.reveal()
+            
+            self.syncPresentableModelState()
+            result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
+            result.affectedLetter.map({ self.presentable.showLetterDeselected($0) })
+            self.presentable.showLetterSelected(result.revealedLetter)
+            self.presentable.showInputLetterRevealed(self.presentableModel(for: result.revealedInputLetter))
+            if result.isLevelSolved {
+                let game = self.getGame.get()
+                let level = game.currentLevel!
+                if game.isCurrentLevelLast {
+                    self.presentable.showGameComplete()
+                }
+                else {
+                    self.presentable.showLevelComplete(levelNumber: level.index)
+                }
             }
-            else {
-                self.presentable.showLevelComplete(levelNumber: level.index)
-            }
+        }
+        catch let error {
+            self.presentable.showError(error)
         }
     }
     
@@ -131,10 +138,15 @@ class GamePresenter {
         let game = self.getGame.get()
         let level = game.currentLevel!
         if level.canPromptRemoveInvalidLetters {
-            let result = self.promptRemoveInvalidLetters.remove()
-            self.syncPresentableModelState()
-            result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
-            self.presentable.showLetterRemoved(result.letter)
+            do {
+                let result = try self.promptRemoveInvalidLetters.remove()
+                self.syncPresentableModelState()
+                result.affectedInputLetter.map({ self.presentable.showInputLetterDeselected(self.presentableModel(for: $0)) })
+                self.presentable.showLetterRemoved(result.letter)
+            }
+            catch let error {
+                self.presentable.showError(error)
+            }
         }
         else {
             self.presentable.showMessage(NSLocalizedString("Cannot remove any letter", comment: ""))

@@ -12,6 +12,9 @@ class PromptRevealLetter {
     
     var getGame: GetGame!
     var saveGame: SaveGame!
+    var userCurrency: UserCurrency!
+    
+    let cost = 50
     
     struct Result {
         
@@ -23,8 +26,20 @@ class PromptRevealLetter {
         
     }
     
-    func reveal() -> Result {
+    func reveal() throws -> Result {
+        try self.payForPrompt()
         let game = self.getGame.get()
+        let result = self.revealLetter(in: game)
+        self.saveGame.save(game)
+        
+        return result
+    }
+    
+    fileprivate func payForPrompt() throws {
+        try self.userCurrency.substractAmount(self.cost)
+    }
+    
+    fileprivate func revealLetter(in game: GameEntity) -> Result {
         let level = game.currentLevel!
         
         let nextUnrevealedIndex = self.findNextUnrevealedLetterIndex(in: level)
@@ -39,8 +54,6 @@ class PromptRevealLetter {
         nextUnrevealedInputLetter.letterIndex = letterIndex
         nextUnrevealedInputLetter.isRevealed = true
         revealedLetter.isSelected = true
-        
-        self.saveGame.save(game)
         
         return Result(revealedInputLetter: nextUnrevealedInputLetter,
                       affectedInputLetter: oldTakenInputLetter,

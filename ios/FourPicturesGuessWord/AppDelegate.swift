@@ -16,11 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        self.configureStubs()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         self.mainNavigator.show(in: self.window!)
         
         return true
+    }
+    
+    private func configureStubs() {
+        CurrencyRepository.amount = 100
     }
 
 }

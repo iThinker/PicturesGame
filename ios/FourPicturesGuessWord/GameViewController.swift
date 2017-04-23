@@ -133,4 +133,8 @@ extension GameViewController: GamePresentable {
         SVProgressHUD.showInfo(withStatus: message)
     }
     
+    func showError(_ error: Error) {
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
+    }
+    
 }

@@ -80,6 +80,7 @@ class GameFactory {
         let interactor = PromptRevealLetter()
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
+        interactor.userCurrency = CurrencyFactory.sharedUserCurrency
         return interactor
     }
     
@@ -87,6 +88,7 @@ class GameFactory {
         let interactor = PromptRemoveInvalidLetters()
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
+        interactor.userCurrency = CurrencyFactory.sharedUserCurrency
         return interactor
     }
     

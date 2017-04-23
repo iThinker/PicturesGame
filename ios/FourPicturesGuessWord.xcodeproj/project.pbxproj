@@ -14,6 +14,12 @@
 		BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */; };
 		BF1A16171E4ABB170027B9C6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A16161E4ABB170027B9C6 /* Array+Extensions.swift */; };
 		BF1A16191E4ABB3A0027B9C6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1A16181E4ABB3A0027B9C6 /* String+Extensions.swift */; };
+		BF46720D1EAC1735007DC0C0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46720C1EAC1735007DC0C0 /* Logger.swift */; };
+		BF4672101EAC1A96007DC0C0 /* UserCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46720F1EAC1A96007DC0C0 /* UserCurrency.swift */; };
+		BF4672131EAC31E5007DC0C0 /* CurrencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672121EAC31E5007DC0C0 /* CurrencyFactory.swift */; };
+		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
+		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
+		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
 		BF818F971E3862F700178511 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = BF818F961E3862F700178511 /* Levels */; };
 		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
 		BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD31E038D25006EAACE /* SaveGame.swift */; };
@@ -61,6 +67,12 @@
 		BF1A160C1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptRemoveInvalidLetters.swift; sourceTree = "<group>"; };
 		BF1A16161E4ABB170027B9C6 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		BF1A16181E4ABB3A0027B9C6 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		BF46720C1EAC1735007DC0C0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BF46720F1EAC1A96007DC0C0 /* UserCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrency.swift; sourceTree = "<group>"; };
+		BF4672121EAC31E5007DC0C0 /* CurrencyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFactory.swift; sourceTree = "<group>"; };
+		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
+		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
+		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
 		BF818F961E3862F700178511 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Levels; path = Resources/Levels; sourceTree = SOURCE_ROOT; };
 		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
 		BFC10AD31E038D25006EAACE /* SaveGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGame.swift; sourceTree = "<group>"; };
@@ -130,6 +142,79 @@
 			name = Hints;
 			sourceTree = "<group>";
 		};
+		BF1EB8141E89EFE500E7CD52 /* In Game Currency */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672111EAC31CB007DC0C0 /* Factory */,
+				BF4672141EAC3742007DC0C0 /* Presenter */,
+				BF46720E1EAC1A79007DC0C0 /* Entity */,
+				BF4FCA8A1EA9A99C00769889 /* Repository */,
+			);
+			name = "In Game Currency";
+			sourceTree = "<group>";
+		};
+		BF46720B1EAC169D007DC0C0 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				BF46720C1EAC1735007DC0C0 /* Logger.swift */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
+		BF46720E1EAC1A79007DC0C0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				BF46720F1EAC1A96007DC0C0 /* UserCurrency.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		BF4672111EAC31CB007DC0C0 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672121EAC31E5007DC0C0 /* CurrencyFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		BF4672141EAC3742007DC0C0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		BF4FCA7F1EA9901700769889 /* Domain Event */ = {
+			isa = PBXGroup;
+			children = (
+				BF4FCA851EA991F200769889 /* DomainEvent.swift */,
+			);
+			name = "Domain Event";
+			sourceTree = "<group>";
+		};
+		BF4FCA801EA9901F00769889 /* Object Association */ = {
+			isa = PBXGroup;
+			children = (
+				BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */,
+			);
+			name = "Object Association";
+			sourceTree = "<group>";
+		};
+		BF4FCA881EA99F1700769889 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF4FCA8A1EA9A99C00769889 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
 		BFC10ACF1E038ACD006EAACE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +256,8 @@
 		BFC6C81C1DFE2D900099CB00 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BF4FCA881EA99F1700769889 /* Products */,
+				BF1EB8141E89EFE500E7CD52 /* In Game Currency */,
 				BFC6C8341DFE3E790099CB00 /* Game */,
 				BFC6C8201DFE2DD20099CB00 /* Main Menu */,
 			);
@@ -180,6 +267,9 @@
 		BFC6C81D1DFE2D970099CB00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BF46720B1EAC169D007DC0C0 /* Logging */,
+				BF4FCA801EA9901F00769889 /* Object Association */,
+				BF4FCA7F1EA9901700769889 /* Domain Event */,
 				BFFACC2B1E10655400444BAD /* Reuse Identifier */,
 				BFFACC251E105E1F00444BAD /* Collection View */,
 				BFFACC1F1E0A1F0600444BAD /* Extensions */,
@@ -549,6 +639,7 @@
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
 				BFFACC1B1E0A0EA800444BAD /* ViewEmbedder.swift in Sources */,
 				BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */,
+				BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */,
 				BFF215291E0640290083DC7D /* GameInputLetterView.swift in Sources */,
 				BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */,
 				BFC6C8371DFE3EA40099CB00 /* ResetGame.swift in Sources */,
@@ -559,6 +650,7 @@
 				BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */,
 				BFC6C83B1DFE3EDD0099CB00 /* GameRepository.swift in Sources */,
 				BFC6C82D1DFE33330099CB00 /* MainMenuViewController.swift in Sources */,
+				BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */,
 				BFFACC211E0A1F4E00444BAD /* UIView+NibLoading.swift in Sources */,
 				BFC6C8301DFE33560099CB00 /* MainMenuPresenter.swift in Sources */,
 				BFF215251E063E1E0083DC7D /* GameInputView.swift in Sources */,
@@ -568,11 +660,15 @@
 				BFC6C83E1DFE3EFD0099CB00 /* GameEntity.swift in Sources */,
 				BFC6C8271DFE32250099CB00 /* MainNavigator.swift in Sources */,
 				BFC6C80B1DFE2A5C0099CB00 /* AppDelegate.swift in Sources */,
+				BF4672101EAC1A96007DC0C0 /* UserCurrency.swift in Sources */,
 				BFFACC2D1E10656500444BAD /* ReuseIdentifier.swift in Sources */,
 				BFC6C8331DFE3BDC0099CB00 /* MainMenuRouter.swift in Sources */,
 				BFC6C82A1DFE32ED0099CB00 /* MainMenuFactory.swift in Sources */,
+				BF46720D1EAC1735007DC0C0 /* Logger.swift in Sources */,
 				BF1A16191E4ABB3A0027B9C6 /* String+Extensions.swift in Sources */,
+				BF4672131EAC31E5007DC0C0 /* CurrencyFactory.swift in Sources */,
 				BFF2151A1E05757A0083DC7D /* GameImagesView.swift in Sources */,
+				BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */,
 				BFC6C84A1DFFA80B0099CB00 /* GameLevelEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

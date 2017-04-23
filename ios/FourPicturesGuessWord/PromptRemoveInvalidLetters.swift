@@ -12,6 +12,9 @@ class PromptRemoveInvalidLetters {
     
     var getGame: GetGame!
     var saveGame: SaveGame!
+    var userCurrency: UserCurrency!
+    
+    let cost = 30
     
     struct Result {
         
@@ -20,8 +23,21 @@ class PromptRemoveInvalidLetters {
         
     }
     
-    func remove() -> Result {
+    func remove() throws -> Result {
+        try self.payForPrompt()
         let game = self.getGame.get()
+        let result = self.removeLetter(in: game)
+        self.saveGame.save(game)
+        
+        return result
+    }
+    
+    fileprivate func payForPrompt() throws {
+        try self.userCurrency.substractAmount(self.cost)
+    }
+    
+    fileprivate func removeLetter(in game: GameEntity) -> Result {
+        
         let level = game.currentLevel!
         
         let unrevealedCharacters = NSCountedSet()
@@ -65,13 +81,11 @@ class PromptRemoveInvalidLetters {
         let affectedInputLetter = level.inputLetters.first(where: { $0.letterIndex == letterIndex })
         affectedInputLetter?.letterIndex = nil
         
-        self.saveGame.save(game)
-        
         return Result(letter: letterToRemove!,
                       affectedInputLetter: affectedInputLetter)
     }
     
-    func filterRevealedLetters(in level: GameLevelEntity) -> [GameLevelEntity.Letter] {
+    fileprivate func filterRevealedLetters(in level: GameLevelEntity) -> [GameLevelEntity.Letter] {
         var availableLetters = level.availableLetters!
         var indicesToRemove = IndexSet()
         level.inputLetters.filter({ $0.isRevealed }).forEach({ indicesToRemove.insert($0.letterIndex!) })
