@@ -10,11 +10,12 @@ import Foundation
 
 class PromptRevealLetter {
     
+    let cost = 50
+    
     var getGame: GetGame!
     var saveGame: SaveGame!
     var userCurrency: UserCurrency!
-    
-    let cost = 50
+    var rewardForCompletingLevel: RewardPlayerForCompletingLevel!
     
     struct Result {
         
@@ -31,6 +32,7 @@ class PromptRevealLetter {
         let game = self.getGame.get()
         let result = self.revealLetter(in: game)
         self.saveGame.save(game)
+        self.rewardForCompletingLevel.reward()
         
         return result
     }

@@ -21,6 +21,7 @@ class SelectLetter {
     
     var getGame: GetGame!
     var saveGame: SaveGame!
+    var rewardForCompletingLevel: RewardPlayerForCompletingLevel!
     
     func select(_ letter: GameLevelEntity.Letter) -> Result {
         let game = self.getGame.get()
@@ -35,6 +36,7 @@ class SelectLetter {
         self.saveGame.save(game)
         
         if level.isSolved {
+            self.rewardForCompletingLevel.reward()
             if game.isCurrentLevelLast {
                 return .gameComplete(game, result)
             }

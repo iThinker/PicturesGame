@@ -59,6 +59,7 @@ class GameFactory {
         let interactor = SelectLetter()
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
+        interactor.rewardForCompletingLevel = self.rewardForCompletingLevel()
         return interactor
     }
     
@@ -82,6 +83,7 @@ class GameFactory {
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
         interactor.userCurrency = CurrencyFactory.sharedUserCurrency
+        interactor.rewardForCompletingLevel = self.rewardForCompletingLevel()
         return interactor
     }
     
@@ -89,6 +91,12 @@ class GameFactory {
         let interactor = PromptRemoveInvalidLetters()
         interactor.getGame = self.getGame()
         interactor.saveGame = self.saveGame()
+        interactor.userCurrency = CurrencyFactory.sharedUserCurrency
+        return interactor
+    }
+    
+    func rewardForCompletingLevel() -> RewardPlayerForCompletingLevel {
+        let interactor = RewardPlayerForCompletingLevel()
         interactor.userCurrency = CurrencyFactory.sharedUserCurrency
         return interactor
     }

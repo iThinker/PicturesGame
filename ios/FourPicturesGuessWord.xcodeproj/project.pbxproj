@@ -20,6 +20,7 @@
 		BF4672161EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672151EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift */; };
 		BF4672191EACED5A007DC0C0 /* UserCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */; };
 		BF46721C1EACEDF5007DC0C0 /* UserCurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */; };
+		BF46721E1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46721D1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift */; };
 		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
 		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
 		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
@@ -76,6 +77,7 @@
 		BF4672151EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrencyPresenter.swift; sourceTree = "<group>"; };
 		BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrencyView.swift; sourceTree = "<group>"; };
 		BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCurrencyView.xib; sourceTree = "<group>"; };
+		BF46721D1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardPlayerForCompletingLevel.swift; sourceTree = "<group>"; };
 		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
 		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				BFC10AD01E038CB2006EAACE /* GetGame.swift */,
 				BFC10AD31E038D25006EAACE /* SaveGame.swift */,
 				BFDF878B1E1DD9FD00452444 /* AdvanceToNextLevel.swift */,
+				BF46721D1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 			files = (
 				BF1A15FD1E415C8F0027B9C6 /* PromptRevealLetter.swift in Sources */,
 				BF1A16171E4ABB170027B9C6 /* Array+Extensions.swift in Sources */,
+				BF46721E1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift in Sources */,
 				BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */,
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
 				BFFACC1B1E0A0EA800444BAD /* ViewEmbedder.swift in Sources */,

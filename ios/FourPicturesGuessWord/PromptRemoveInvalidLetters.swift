@@ -10,11 +10,11 @@ import Foundation
 
 class PromptRemoveInvalidLetters {
     
+    let cost = 30
+    
     var getGame: GetGame!
     var saveGame: SaveGame!
     var userCurrency: UserCurrency!
-    
-    let cost = 30
     
     struct Result {
         
@@ -26,7 +26,7 @@ class PromptRemoveInvalidLetters {
     func remove() throws -> Result {
         try self.payForPrompt()
         let game = self.getGame.get()
-        let result = self.removeLetter(in: game)
+        let result = self.removeLetter(in: game.currentLevel)
         self.saveGame.save(game)
         
         return result
@@ -36,10 +36,7 @@ class PromptRemoveInvalidLetters {
         try self.userCurrency.substractAmount(self.cost)
     }
     
-    fileprivate func removeLetter(in game: GameEntity) -> Result {
-        
-        let level = game.currentLevel!
-        
+    fileprivate func removeLetter(in level: GameLevelEntity) -> Result {
         let unrevealedCharacters = NSCountedSet()
         level.solutionWord.characters.forEach { (character) in
             unrevealedCharacters.add(character)

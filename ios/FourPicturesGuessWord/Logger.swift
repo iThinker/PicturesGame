@@ -23,7 +23,7 @@ func tryAndLog<T>(_ executable: @autoclosure () throws -> T, withDefault default
         return try executable()
     }
     catch let error {
-        logger.log("Logged excpetion: \(error.localizedDescription), in \(file), at \(line)")
+        logger.log("Logged exception: \(error.localizedDescription), in \(file), at \(line)")
     }
     
     return defaultValue

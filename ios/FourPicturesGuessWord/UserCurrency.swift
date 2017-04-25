@@ -31,10 +31,10 @@ class UserCurrency {
         return tryAndLog(try self.repository.getAmount(), withDefault: 0)
     }
     
-    func appendAmount(_ amount: Int) throws {
-        try self.updateAmount { (oldAmount) -> Int in
+    func appendAmount(_ amount: Int) {
+        tryAndLog(try self.updateAmount { (oldAmount) -> Int in
             return oldAmount + amount
-        }
+        })
     }
     
     func substractAmount(_ amount: Int) throws {
