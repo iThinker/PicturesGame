@@ -21,6 +21,11 @@
 		BF4672191EACED5A007DC0C0 /* UserCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */; };
 		BF46721C1EACEDF5007DC0C0 /* UserCurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */; };
 		BF46721E1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46721D1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift */; };
+		BF46722D1EB03BB2007DC0C0 /* GetProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46722C1EB03BB2007DC0C0 /* GetProductList.swift */; };
+		BF4672301EB03DD5007DC0C0 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46722F1EB03DD5007DC0C0 /* ProductRepository.swift */; };
+		BF4672331EB03E8A007DC0C0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672321EB03E8A007DC0C0 /* Product.swift */; };
+		BF4672351EB042BD007DC0C0 /* bagOfGemsIcon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF4672341EB042BD007DC0C0 /* bagOfGemsIcon.jpeg */; };
+		BF4672371EB04322007DC0C0 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = BF4672361EB04322007DC0C0 /* Products.json */; };
 		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
 		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
 		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
@@ -78,6 +83,11 @@
 		BF4672181EACED5A007DC0C0 /* UserCurrencyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCurrencyView.swift; sourceTree = "<group>"; };
 		BF46721B1EACEDF5007DC0C0 /* UserCurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCurrencyView.xib; sourceTree = "<group>"; };
 		BF46721D1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardPlayerForCompletingLevel.swift; sourceTree = "<group>"; };
+		BF46722C1EB03BB2007DC0C0 /* GetProductList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetProductList.swift; sourceTree = "<group>"; };
+		BF46722F1EB03DD5007DC0C0 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
+		BF4672321EB03E8A007DC0C0 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BF4672341EB042BD007DC0C0 /* bagOfGemsIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bagOfGemsIcon.jpeg; path = Resources/bagOfGemsIcon.jpeg; sourceTree = SOURCE_ROOT; };
+		BF4672361EB04322007DC0C0 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Products.json; path = Resources/Products.json; sourceTree = SOURCE_ROOT; };
 		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
 		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
@@ -203,6 +213,30 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		BF46722B1EB03B9A007DC0C0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BF46722C1EB03BB2007DC0C0 /* GetProductList.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		BF46722E1EB03DBB007DC0C0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				BF46722F1EB03DD5007DC0C0 /* ProductRepository.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
+		BF4672311EB03E7D007DC0C0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672321EB03E8A007DC0C0 /* Product.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 		BF4FCA7F1EA9901700769889 /* Domain Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +256,9 @@
 		BF4FCA881EA99F1700769889 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672311EB03E7D007DC0C0 /* Entity */,
+				BF46722E1EB03DBB007DC0C0 /* Repository */,
+				BF46722B1EB03B9A007DC0C0 /* Interactor */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,6 +339,8 @@
 		BFC6C81E1DFE2D9D0099CB00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672341EB042BD007DC0C0 /* bagOfGemsIcon.jpeg */,
+				BF4672361EB04322007DC0C0 /* Products.json */,
 				BF818F961E3862F700178511 /* Levels */,
 				BFC6C8111DFE2A5C0099CB00 /* Assets.xcassets */,
 			);
@@ -591,11 +630,13 @@
 				BFC6C82E1DFE33330099CB00 /* MainMenuViewController.xib in Resources */,
 				BFF215171E056D910083DC7D /* GameViewController.xib in Resources */,
 				BFF2152F1E06452C0083DC7D /* GameLetterView.xib in Resources */,
+				BF4672351EB042BD007DC0C0 /* bagOfGemsIcon.jpeg in Resources */,
 				BFF215271E063E2E0083DC7D /* GameInputView.xib in Resources */,
 				BFF215231E063E100083DC7D /* GameLettersView.xib in Resources */,
 				BF818F971E3862F700178511 /* Levels in Resources */,
 				BFF2151C1E0575940083DC7D /* GameImagesView.xib in Resources */,
 				BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */,
+				BF4672371EB04322007DC0C0 /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +706,7 @@
 				BFF215291E0640290083DC7D /* GameInputLetterView.swift in Sources */,
 				BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */,
 				BFC6C8371DFE3EA40099CB00 /* ResetGame.swift in Sources */,
+				BF4672301EB03DD5007DC0C0 /* ProductRepository.swift in Sources */,
 				BF4672161EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift in Sources */,
 				BFF2152D1E0645170083DC7D /* GameLetterView.swift in Sources */,
 				BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */,
@@ -672,6 +714,7 @@
 				BFDF878C1E1DD9FD00452444 /* AdvanceToNextLevel.swift in Sources */,
 				BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */,
 				BFC6C83B1DFE3EDD0099CB00 /* GameRepository.swift in Sources */,
+				BF4672331EB03E8A007DC0C0 /* Product.swift in Sources */,
 				BFC6C82D1DFE33330099CB00 /* MainMenuViewController.swift in Sources */,
 				BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */,
 				BFFACC211E0A1F4E00444BAD /* UIView+NibLoading.swift in Sources */,
@@ -687,6 +730,7 @@
 				BF4672101EAC1A96007DC0C0 /* UserCurrency.swift in Sources */,
 				BFFACC2D1E10656500444BAD /* ReuseIdentifier.swift in Sources */,
 				BFC6C8331DFE3BDC0099CB00 /* MainMenuRouter.swift in Sources */,
+				BF46722D1EB03BB2007DC0C0 /* GetProductList.swift in Sources */,
 				BFC6C82A1DFE32ED0099CB00 /* MainMenuFactory.swift in Sources */,
 				BF46720D1EAC1735007DC0C0 /* Logger.swift in Sources */,
 				BF1A16191E4ABB3A0027B9C6 /* String+Extensions.swift in Sources */,

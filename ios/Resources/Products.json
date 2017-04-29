@@ -1,0 +1,27 @@
+[
+ {
+ "id": "bagOfGems100",
+ "desciption": "100 gems",
+ "imageName": "bagOfGemsIcon.jpeg"
+ },
+ {
+ "id": "bagOfGems250",
+ "desciption": "250 gems",
+ "imageName": "bagOfGemsIcon.jpeg"
+ },
+ {
+ "id": "bagOfGems500",
+ "desciption": "500 gems",
+ "imageName": "bagOfGemsIcon.jpeg"
+ },
+ {
+ "id": "bagOfGems1000",
+ "desciption": "1000 gems",
+ "imageName": "bagOfGemsIcon.jpeg"
+ },
+ {
+ "id": "bagOfGems5000",
+ "desciption": "5000 gems",
+ "imageName": "bagOfGemsIcon.jpeg"
+ }
+ ]

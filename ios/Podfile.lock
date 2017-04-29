@@ -1,15 +1,28 @@
 PODS:
+  - PromiseKit (4.0.5):
+    - PromiseKit/Foundation (= 4.0.5)
+    - PromiseKit/QuartzCore (= 4.0.5)
+    - PromiseKit/UIKit (= 4.0.5)
+  - PromiseKit/CorePromise (4.0.5)
+  - PromiseKit/Foundation (4.0.5):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.5):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.5):
+    - PromiseKit/CorePromise
   - SAMKeychain (1.5.2)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
+  - PromiseKit (~> 4.0.0)
   - SAMKeychain (~> 1.5.2)
   - SVProgressHUD (~> 2.1.2)
 
 SPEC CHECKSUMS:
+  PromiseKit: 593b5e24ded6cbb1ebc708bc2c3428a8a5632d91
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: b0a6e68c43f0d61784c979bbb0a408b21fcf8f4c
+PODFILE CHECKSUM: 48b499d57853a6dc5f625332d2771157ae7ee2f6
 
 COCOAPODS: 1.2.0
