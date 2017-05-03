@@ -16,11 +16,13 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kan-jb-D0a" userLabel="Label - Amount">
                     <rect key="frame" x="0.0" y="0.0" width="268" height="36"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Kan-jb-D0a" secondAttribute="bottom" id="8Yk-2x-MBD"/>
                 <constraint firstAttribute="trailing" secondItem="Kan-jb-D0a" secondAttribute="trailing" id="WaI-g2-uhm"/>
@@ -33,8 +35,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="userCurrencyLabel" destination="Kan-jb-D0a" id="00h-PS-GC8"/>
+                <outletCollection property="gestureRecognizers" destination="soM-3Z-cTH" appends="YES" id="0BE-pb-JW8"/>
             </connections>
             <point key="canvasLocation" x="-29" y="230"/>
         </view>
+        <tapGestureRecognizer id="soM-3Z-cTH">
+            <connections>
+                <action selector="onTap:" destination="iN0-l3-epB" id="eDa-NY-YD9"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

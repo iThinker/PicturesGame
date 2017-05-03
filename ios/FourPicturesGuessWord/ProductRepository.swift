@@ -71,8 +71,10 @@ class ProductRepository {
         priceInfo.products.forEach { (skProduct) in
             let product = localProducts.first(where: { $0.id == skProduct.productIdentifier })!
             product.price = skProduct.price
+            product.priceLocale = skProduct.priceLocale
             product.description = skProduct.localizedDescription
             product.title = skProduct.localizedTitle
+            product.skProduct = skProduct
         }
         
         return products

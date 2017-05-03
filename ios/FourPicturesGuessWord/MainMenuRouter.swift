@@ -18,6 +18,7 @@ class MainMenuRouter {
             self.navigationController.isNavigationBarHidden = true
             self.navigationController.popViewController(animated: true)
         }
+        viewController.presenter.router.navigationController = self.navigationController
         self.navigationController.isNavigationBarHidden = false
         self.navigationController.pushViewController(viewController, animated: true)
     }

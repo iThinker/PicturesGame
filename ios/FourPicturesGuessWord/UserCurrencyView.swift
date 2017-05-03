@@ -19,6 +19,10 @@ class UserCurrencyView: UIView {
         presenter.startPresentation()
     }
     
+    @IBAction func onTap(_ sender: AnyObject) {
+        self.presenter?.select()
+    }
+    
 }
 
 extension UserCurrencyView: UserCurrencyPresentable {

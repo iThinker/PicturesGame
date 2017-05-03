@@ -16,6 +16,7 @@ class UserCurrencyPresenter {
     
     weak var presentable: UserCurrencyPresentable!
     var userCurrency: UserCurrency!
+    var onSelect: (() -> Void)!
     
     func startPresentation() {
         self.presentable.showAmount(self.userCurrency.getAmount())
@@ -24,6 +25,10 @@ class UserCurrencyPresenter {
             (event) in
             self?.presentable.showAmount(event.newAmount)
         }
+    }
+    
+    func select() {
+        self.onSelect()
     }
     
 }

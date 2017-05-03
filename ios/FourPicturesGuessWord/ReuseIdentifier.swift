@@ -13,3 +13,9 @@ extension UICollectionViewCell {
         return String(describing: self)
     }
 }
+
+extension UITableViewCell {
+    class func defaultReuseIdentifier() -> String {
+        return String(describing: self)
+    }
+}

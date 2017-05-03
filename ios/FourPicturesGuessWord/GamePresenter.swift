@@ -45,8 +45,10 @@ class GamePresenter {
         
     }
     
+    var router: GameRouter!
     weak var presentable: GamePresentable!
     var presentableModel: PresentableModel!
+    var userCurrencyPresenter: UserCurrencyPresenter!
     
     var getGame: GetGame!
     var selectLetter: SelectLetter!
@@ -55,11 +57,11 @@ class GamePresenter {
     var resetGame: ResetGame!
     var promptRevealLetter: PromptRevealLetter!
     var promptRemoveInvalidLetters: PromptRemoveInvalidLetters!
-    var userCurrencyPresenter: UserCurrencyPresenter!
     
     var onGameComplete: (() -> Void)!
     
     func startPresentation() {
+        self.configure()
         self.showCurrentLevel()
         self.presentable.show(userCurrencyPresenter: self.userCurrencyPresenter)
     }
@@ -162,6 +164,13 @@ class GamePresenter {
     }
     
     //MARK: Private
+    
+    fileprivate func configure() {
+        self.userCurrencyPresenter.onSelect = {
+            [weak self] in
+            self?.router.showProductList()
+        }
+    }
     
     fileprivate func showCurrentLevel() {
         let game = self.getGame.get()

@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import PromiseKit
 
 class GetProductList {
     
+    var repository: ProductRepository!
     
+    func get() -> Promise<[Product]> {
+        return self.repository.getProductList()
+    }
     
 }

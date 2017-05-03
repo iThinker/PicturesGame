@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class Product {
     
@@ -15,5 +16,7 @@ class Product {
     var description: String!
     var image: UIImage!
     var price: NSDecimalNumber!
+    var priceLocale: Locale!
+    var skProduct: SKProduct!
     
 }

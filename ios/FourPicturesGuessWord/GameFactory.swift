@@ -13,6 +13,10 @@ class GameFactory {
     static let shared = GameFactory()
     fileprivate static let repository = GameRepository()
     
+    func router() -> GameRouter {
+        return GameRouter()
+    }
+    
     func viewController() -> GameViewController {
         let viewController = GameViewController()
         viewController.presenter = self.presenter()
@@ -21,6 +25,7 @@ class GameFactory {
     
     func presenter() -> GamePresenter {
         let presenter = GamePresenter()
+        presenter.router = self.router()
         presenter.getGame = self.getGame()
         presenter.selectLetter = self.selectLetter()
         presenter.selectInputLetter = self.selectInputLetter()
@@ -32,15 +37,15 @@ class GameFactory {
         return presenter
     }
     
+    func gameRepository() -> GameRepository {
+        return GameFactory.repository
+    }
+    
     func resetGameInteractor() -> ResetGame {
         let interactor = ResetGame()
         interactor.repository = self.gameRepository()
         interactor.saveGame = self.saveGame()
         return interactor
-    }
-    
-    func gameRepository() -> GameRepository {
-        return GameFactory.repository
     }
     
     func getGame() -> GetGame {

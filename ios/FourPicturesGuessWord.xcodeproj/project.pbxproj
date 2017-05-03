@@ -26,6 +26,18 @@
 		BF4672331EB03E8A007DC0C0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672321EB03E8A007DC0C0 /* Product.swift */; };
 		BF4672351EB042BD007DC0C0 /* bagOfGemsIcon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF4672341EB042BD007DC0C0 /* bagOfGemsIcon.jpeg */; };
 		BF4672371EB04322007DC0C0 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = BF4672361EB04322007DC0C0 /* Products.json */; };
+		BF4672441EB54AF7007DC0C0 /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672431EB54AF7007DC0C0 /* ProductListPresenter.swift */; };
+		BF4672491EB6244F007DC0C0 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672471EB6244F007DC0C0 /* ProductListViewController.swift */; };
+		BF46724A1EB6244F007DC0C0 /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4672481EB6244F007DC0C0 /* ProductListViewController.xib */; };
+		BF46724E1EB625F8007DC0C0 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46724C1EB625F8007DC0C0 /* ProductListTableViewController.swift */; };
+		BF46724F1EB625F8007DC0C0 /* ProductListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF46724D1EB625F8007DC0C0 /* ProductListTableViewController.xib */; };
+		BF4672531EB62E5A007DC0C0 /* TableViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672521EB62E5A007DC0C0 /* TableViewContainerCell.swift */; };
+		BF4672551EB63132007DC0C0 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672541EB63132007DC0C0 /* ProductView.swift */; };
+		BF4672571EB63150007DC0C0 /* ProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4672561EB63150007DC0C0 /* ProductView.xib */; };
+		BF46725C1EB66874007DC0C0 /* ViewControllerEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46725B1EB66874007DC0C0 /* ViewControllerEmbedder.swift */; };
+		BF4672611EB96CA1007DC0C0 /* ProductsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672601EB96CA1007DC0C0 /* ProductsFactory.swift */; };
+		BF4672641EB96FA0007DC0C0 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672631EB96FA0007DC0C0 /* GameRouter.swift */; };
+		BF4672671EB97EF3007DC0C0 /* ModalViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672661EB97EF3007DC0C0 /* ModalViewControllerContainer.swift */; };
 		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
 		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
 		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
@@ -88,6 +100,18 @@
 		BF4672321EB03E8A007DC0C0 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		BF4672341EB042BD007DC0C0 /* bagOfGemsIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bagOfGemsIcon.jpeg; path = Resources/bagOfGemsIcon.jpeg; sourceTree = SOURCE_ROOT; };
 		BF4672361EB04322007DC0C0 /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Products.json; path = Resources/Products.json; sourceTree = SOURCE_ROOT; };
+		BF4672431EB54AF7007DC0C0 /* ProductListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
+		BF4672471EB6244F007DC0C0 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		BF4672481EB6244F007DC0C0 /* ProductListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		BF46724C1EB625F8007DC0C0 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
+		BF46724D1EB625F8007DC0C0 /* ProductListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListTableViewController.xib; sourceTree = "<group>"; };
+		BF4672521EB62E5A007DC0C0 /* TableViewContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewContainerCell.swift; sourceTree = "<group>"; };
+		BF4672541EB63132007DC0C0 /* ProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		BF4672561EB63150007DC0C0 /* ProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductView.xib; sourceTree = "<group>"; };
+		BF46725B1EB66874007DC0C0 /* ViewControllerEmbedder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerEmbedder.swift; sourceTree = "<group>"; };
+		BF4672601EB96CA1007DC0C0 /* ProductsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsFactory.swift; sourceTree = "<group>"; };
+		BF4672631EB96FA0007DC0C0 /* GameRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
+		BF4672661EB97EF3007DC0C0 /* ModalViewControllerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerContainer.swift; sourceTree = "<group>"; };
 		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
 		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
@@ -237,6 +261,83 @@
 			name = Entity;
 			sourceTree = "<group>";
 		};
+		BF4672411EB54ACA007DC0C0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672431EB54AF7007DC0C0 /* ProductListPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		BF4672421EB54AD5007DC0C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF46724B1EB625D9007DC0C0 /* Children */,
+				BF4672471EB6244F007DC0C0 /* ProductListViewController.swift */,
+				BF4672481EB6244F007DC0C0 /* ProductListViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BF46724B1EB625D9007DC0C0 /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				BF46724C1EB625F8007DC0C0 /* ProductListTableViewController.swift */,
+				BF46724D1EB625F8007DC0C0 /* ProductListTableViewController.xib */,
+				BF4672541EB63132007DC0C0 /* ProductView.swift */,
+				BF4672561EB63150007DC0C0 /* ProductView.xib */,
+			);
+			name = Children;
+			sourceTree = "<group>";
+		};
+		BF4672501EB62DFA007DC0C0 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672511EB62E22007DC0C0 /* Cell */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+		BF4672511EB62E22007DC0C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672521EB62E5A007DC0C0 /* TableViewContainerCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		BF46725A1EB6685E007DC0C0 /* ViewController Embedder */ = {
+			isa = PBXGroup;
+			children = (
+				BF46725B1EB66874007DC0C0 /* ViewControllerEmbedder.swift */,
+			);
+			name = "ViewController Embedder";
+			sourceTree = "<group>";
+		};
+		BF46725F1EB96C19007DC0C0 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672601EB96CA1007DC0C0 /* ProductsFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		BF4672621EB96F2C007DC0C0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672631EB96FA0007DC0C0 /* GameRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		BF4672651EB97EC7007DC0C0 /* Modal ViewController Container */ = {
+			isa = PBXGroup;
+			children = (
+				BF4672661EB97EF3007DC0C0 /* ModalViewControllerContainer.swift */,
+			);
+			name = "Modal ViewController Container";
+			sourceTree = "<group>";
+		};
 		BF4FCA7F1EA9901700769889 /* Domain Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +357,9 @@
 		BF4FCA881EA99F1700769889 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				BF46725F1EB96C19007DC0C0 /* Factory */,
+				BF4672421EB54AD5007DC0C0 /* View */,
+				BF4672411EB54ACA007DC0C0 /* Presenter */,
 				BF4672311EB03E7D007DC0C0 /* Entity */,
 				BF46722E1EB03DBB007DC0C0 /* Repository */,
 				BF46722B1EB03B9A007DC0C0 /* Interactor */,
@@ -323,11 +427,14 @@
 		BFC6C81D1DFE2D970099CB00 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672651EB97EC7007DC0C0 /* Modal ViewController Container */,
+				BF46725A1EB6685E007DC0C0 /* ViewController Embedder */,
 				BF46720B1EAC169D007DC0C0 /* Logging */,
 				BF4FCA801EA9901F00769889 /* Object Association */,
 				BF4FCA7F1EA9901700769889 /* Domain Event */,
 				BFFACC2B1E10655400444BAD /* Reuse Identifier */,
 				BFFACC251E105E1F00444BAD /* Collection View */,
+				BF4672501EB62DFA007DC0C0 /* Table View */,
 				BFFACC1F1E0A1F0600444BAD /* Extensions */,
 				BFFACC191E0A0E9100444BAD /* View Embedder */,
 				BFC6C8251DFE31FD0099CB00 /* Main Navigator */,
@@ -412,6 +519,7 @@
 		BFC6C8341DFE3E790099CB00 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672621EB96F2C007DC0C0 /* Router */,
 				BFC6C83F1DFE3FA00099CB00 /* Factory */,
 				BFC10ACF1E038ACD006EAACE /* View */,
 				BFC6C8461DFFA1C60099CB00 /* Presenter */,
@@ -626,6 +734,7 @@
 			files = (
 				BFC6C8151DFE2A5C0099CB00 /* LaunchScreen.storyboard in Resources */,
 				BFF2152B1E0641960083DC7D /* GameInputLetterView.xib in Resources */,
+				BF46724F1EB625F8007DC0C0 /* ProductListTableViewController.xib in Resources */,
 				BF46721C1EACEDF5007DC0C0 /* UserCurrencyView.xib in Resources */,
 				BFC6C82E1DFE33330099CB00 /* MainMenuViewController.xib in Resources */,
 				BFF215171E056D910083DC7D /* GameViewController.xib in Resources */,
@@ -634,6 +743,8 @@
 				BFF215271E063E2E0083DC7D /* GameInputView.xib in Resources */,
 				BFF215231E063E100083DC7D /* GameLettersView.xib in Resources */,
 				BF818F971E3862F700178511 /* Levels in Resources */,
+				BF46724A1EB6244F007DC0C0 /* ProductListViewController.xib in Resources */,
+				BF4672571EB63150007DC0C0 /* ProductView.xib in Resources */,
 				BFF2151C1E0575940083DC7D /* GameImagesView.xib in Resources */,
 				BFC6C8121DFE2A5C0099CB00 /* Assets.xcassets in Resources */,
 				BF4672371EB04322007DC0C0 /* Products.json in Resources */,
@@ -698,9 +809,11 @@
 				BF1A15FD1E415C8F0027B9C6 /* PromptRevealLetter.swift in Sources */,
 				BF1A16171E4ABB170027B9C6 /* Array+Extensions.swift in Sources */,
 				BF46721E1EAEE2CB007DC0C0 /* RewardPlayerForCompletingLevel.swift in Sources */,
+				BF46724E1EB625F8007DC0C0 /* ProductListTableViewController.swift in Sources */,
 				BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */,
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
 				BFFACC1B1E0A0EA800444BAD /* ViewEmbedder.swift in Sources */,
+				BF4672441EB54AF7007DC0C0 /* ProductListPresenter.swift in Sources */,
 				BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */,
 				BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */,
 				BFF215291E0640290083DC7D /* GameInputLetterView.swift in Sources */,
@@ -709,17 +822,20 @@
 				BF4672301EB03DD5007DC0C0 /* ProductRepository.swift in Sources */,
 				BF4672161EAC4EF3007DC0C0 /* UserCurrencyPresenter.swift in Sources */,
 				BFF2152D1E0645170083DC7D /* GameLetterView.swift in Sources */,
+				BF4672671EB97EF3007DC0C0 /* ModalViewControllerContainer.swift in Sources */,
 				BF05328E1E00E7D900D89E9E /* SelectInputLetter.swift in Sources */,
 				BFC10ADE1E04D6CE006EAACE /* GameViewController.swift in Sources */,
 				BFDF878C1E1DD9FD00452444 /* AdvanceToNextLevel.swift in Sources */,
 				BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */,
 				BFC6C83B1DFE3EDD0099CB00 /* GameRepository.swift in Sources */,
 				BF4672331EB03E8A007DC0C0 /* Product.swift in Sources */,
+				BF46725C1EB66874007DC0C0 /* ViewControllerEmbedder.swift in Sources */,
 				BFC6C82D1DFE33330099CB00 /* MainMenuViewController.swift in Sources */,
 				BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */,
 				BFFACC211E0A1F4E00444BAD /* UIView+NibLoading.swift in Sources */,
 				BFC6C8301DFE33560099CB00 /* MainMenuPresenter.swift in Sources */,
 				BFF215251E063E1E0083DC7D /* GameInputView.swift in Sources */,
+				BF4672641EB96FA0007DC0C0 /* GameRouter.swift in Sources */,
 				BF1A160D1E49795E0027B9C6 /* PromptRemoveInvalidLetters.swift in Sources */,
 				BFF215211E063DFA0083DC7D /* GameLettersView.swift in Sources */,
 				BF4672191EACED5A007DC0C0 /* UserCurrencyView.swift in Sources */,
@@ -731,9 +847,13 @@
 				BFFACC2D1E10656500444BAD /* ReuseIdentifier.swift in Sources */,
 				BFC6C8331DFE3BDC0099CB00 /* MainMenuRouter.swift in Sources */,
 				BF46722D1EB03BB2007DC0C0 /* GetProductList.swift in Sources */,
+				BF4672491EB6244F007DC0C0 /* ProductListViewController.swift in Sources */,
 				BFC6C82A1DFE32ED0099CB00 /* MainMenuFactory.swift in Sources */,
+				BF4672551EB63132007DC0C0 /* ProductView.swift in Sources */,
 				BF46720D1EAC1735007DC0C0 /* Logger.swift in Sources */,
 				BF1A16191E4ABB3A0027B9C6 /* String+Extensions.swift in Sources */,
+				BF4672611EB96CA1007DC0C0 /* ProductsFactory.swift in Sources */,
+				BF4672531EB62E5A007DC0C0 /* TableViewContainerCell.swift in Sources */,
 				BF4672131EAC31E5007DC0C0 /* CurrencyFactory.swift in Sources */,
 				BFF2151A1E05757A0083DC7D /* GameImagesView.swift in Sources */,
 				BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */,
