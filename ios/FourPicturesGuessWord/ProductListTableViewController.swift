@@ -18,6 +18,8 @@ class ProductListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50.0
         self.tableView.register(Cell.self, forCellReuseIdentifier: Cell.defaultReuseIdentifier())
     }
     
