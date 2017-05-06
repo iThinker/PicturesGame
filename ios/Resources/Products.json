@@ -1,22 +1,27 @@
 [
  {
  "id": "bagOfGems100",
- "imageName": "bagOfGemsIcon.jpeg"
+ "imageName": "bagOfGemsIcon.jpeg",
+ "currencyAmount": 100
  },
  {
  "id": "bagOfGems250",
- "imageName": "bagOfGemsIcon.jpeg"
+ "imageName": "bagOfGemsIcon.jpeg",
+ "currencyAmount": 250
  },
  {
  "id": "bagOfGems500",
- "imageName": "bagOfGemsIcon.jpeg"
+ "imageName": "bagOfGemsIcon.jpeg",
+ "currencyAmount": 500
  },
  {
  "id": "bagOfGems1000",
- "imageName": "bagOfGemsIcon.jpeg"
+ "imageName": "bagOfGemsIcon.jpeg",
+ "currencyAmount": 1000
  },
  {
  "id": "bagOfGems5000",
- "imageName": "bagOfGemsIcon.jpeg"
+ "imageName": "bagOfGemsIcon.jpeg",
+ "currencyAmount": 5000
  }
  ]

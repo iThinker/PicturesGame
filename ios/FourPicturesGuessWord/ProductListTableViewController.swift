@@ -13,6 +13,7 @@ class ProductListTableViewController: UITableViewController {
     typealias Cell = TableViewContainerCell<ProductView>
     
     var products: [ProductListPresenter.PresentableModel] = []
+    var onSelectProduct: ((ProductListPresenter.PresentableModel) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,8 @@ class ProductListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        super.tableView(tableView, didSelectRowAt: indexPath)
+        let product = self.products[indexPath.row]
+        self.onSelectProduct(product)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

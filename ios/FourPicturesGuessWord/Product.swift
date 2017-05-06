@@ -18,5 +18,6 @@ class Product {
     var price: NSDecimalNumber!
     var priceLocale: Locale!
     var skProduct: SKProduct!
+    var currencyAmount: Int!
     
 }

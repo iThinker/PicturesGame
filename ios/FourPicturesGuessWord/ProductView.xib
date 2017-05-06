@@ -18,8 +18,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-at-ZKI">
                     <rect key="frame" x="5" y="6.5" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Gzc-at-ZKI" secondAttribute="height" multiplier="1:1" id="UQp-VG-wCo"/>
-                        <constraint firstAttribute="height" constant="40" placeholder="YES" id="WNh-L9-rrK"/>
+                        <constraint firstAttribute="width" secondItem="Gzc-at-ZKI" secondAttribute="height" multiplier="1:1" priority="999" id="UQp-VG-wCo"/>
                         <constraint firstAttribute="width" constant="40" id="il7-XF-Ux8"/>
                     </constraints>
                 </imageView>

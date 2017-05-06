@@ -13,6 +13,10 @@ import PromiseKit
 
 class ProductRepository {
     
+    enum Error: Swift.Error {
+        case notFound
+    }
+    
     private var runningTransactions: [ProductRequestTransactionRunner] = []
     
     func getProductList() -> Promise<[Product]> {
@@ -28,6 +32,21 @@ class ProductRepository {
         }
     }
     
+    func getLocalProductInfo(forProductIdentifier productIdentifier: String) -> Promise<Product> {
+        return firstly { _ in
+            self.getProductsFromCache()
+            }.then { products -> Product in
+                if let product = products.first(where: { $0.id == productIdentifier }) {
+                    return product
+                }
+                else {
+                    throw Error.notFound
+                }
+        }
+    }
+    
+    //MARK: Private
+    
     private func getProductsFromCache() -> Promise<[Product]> {
         func getProductInfoFromLocalStorage() throws -> [[String: Any]] {
             let path = Bundle.main.url(forResource: "Products", withExtension: "json")!
@@ -40,6 +59,7 @@ class ProductRepository {
             let product = Product()
             product.id = productInfo["id"] as! String
             product.image = UIImage(named: productInfo["imageName"] as! String)
+            product.currencyAmount = productInfo["currencyAmount"] as! Int
             return product
         }
         
@@ -84,7 +104,7 @@ class ProductRepository {
         
         var request: SKProductsRequest
         var fulfill: ((SKProductsResponse) -> Void)!
-        var reject: ((Error) -> Void)!
+        var reject: ((Swift.Error) -> Void)!
         
         init(request: SKProductsRequest) {
             self.request = request
@@ -105,7 +125,7 @@ class ProductRepository {
             fulfill(response)
         }
         
-        func request(_ request: SKRequest, didFailWithError error: Error) {
+        func request(_ request: SKRequest, didFailWithError error: Swift.Error) {
             reject(error)
         }
         

@@ -14,6 +14,11 @@ class GameRouter {
     
     func showProductList() {
         let viewController = ProductsFactory.shared.listViewController()
+        viewController.presenter.onPurchaseComplete = {
+            [unowned self]
+            _ in
+            self.navigationController.dismiss(animated: true, completion: nil)
+        }
         let containerViewController = ModalContainerViewController(content: viewController)
         let modalNavigationController = UINavigationController(rootViewController: containerViewController)
         modalNavigationController.navigationBar.isTranslucent = false

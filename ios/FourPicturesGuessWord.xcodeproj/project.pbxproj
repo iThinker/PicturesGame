@@ -38,10 +38,14 @@
 		BF4672611EB96CA1007DC0C0 /* ProductsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672601EB96CA1007DC0C0 /* ProductsFactory.swift */; };
 		BF4672641EB96FA0007DC0C0 /* GameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672631EB96FA0007DC0C0 /* GameRouter.swift */; };
 		BF4672671EB97EF3007DC0C0 /* ModalViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4672661EB97EF3007DC0C0 /* ModalViewControllerContainer.swift */; };
+		BF46726B1EBACE48007DC0C0 /* PaymentQueueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF46726A1EBACE48007DC0C0 /* PaymentQueueObserver.swift */; };
 		BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */; };
 		BF4FCA861EA991F200769889 /* DomainEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA851EA991F200769889 /* DomainEvent.swift */; };
 		BF4FCA8C1EA9ABE900769889 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */; };
 		BF818F971E3862F700178511 /* Levels in Resources */ = {isa = PBXBuildFile; fileRef = BF818F961E3862F700178511 /* Levels */; };
+		BF948FF91EBC0C870035BC1E /* PaymentTransactionResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF948FF81EBC0C870035BC1E /* PaymentTransactionResultObserver.swift */; };
+		BF948FFF1EBC13E80035BC1E /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF948FFE1EBC13E80035BC1E /* PaymentService.swift */; };
+		BF9490021EBC14DB0035BC1E /* PaymentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9490011EBC14DB0035BC1E /* PaymentFactory.swift */; };
 		BFC10AD11E038CB2006EAACE /* GetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD01E038CB2006EAACE /* GetGame.swift */; };
 		BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10AD31E038D25006EAACE /* SaveGame.swift */; };
 		BFC10ADE1E04D6CE006EAACE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC10ADC1E04D6CE006EAACE /* GameViewController.swift */; };
@@ -112,10 +116,14 @@
 		BF4672601EB96CA1007DC0C0 /* ProductsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsFactory.swift; sourceTree = "<group>"; };
 		BF4672631EB96FA0007DC0C0 /* GameRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRouter.swift; sourceTree = "<group>"; };
 		BF4672661EB97EF3007DC0C0 /* ModalViewControllerContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewControllerContainer.swift; sourceTree = "<group>"; };
+		BF46726A1EBACE48007DC0C0 /* PaymentQueueObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentQueueObserver.swift; sourceTree = "<group>"; };
 		BF4FCA811EA9906F00769889 /* ObjectAssociation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		BF4FCA851EA991F200769889 /* DomainEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainEvent.swift; sourceTree = "<group>"; };
 		BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
 		BF818F961E3862F700178511 /* Levels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Levels; path = Resources/Levels; sourceTree = SOURCE_ROOT; };
+		BF948FF81EBC0C870035BC1E /* PaymentTransactionResultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentTransactionResultObserver.swift; sourceTree = "<group>"; };
+		BF948FFE1EBC13E80035BC1E /* PaymentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		BF9490011EBC14DB0035BC1E /* PaymentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentFactory.swift; sourceTree = "<group>"; };
 		BFC10AD01E038CB2006EAACE /* GetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGame.swift; sourceTree = "<group>"; };
 		BFC10AD31E038D25006EAACE /* SaveGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGame.swift; sourceTree = "<group>"; };
 		BFC10ADC1E04D6CE006EAACE /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +346,25 @@
 			name = "Modal ViewController Container";
 			sourceTree = "<group>";
 		};
+		BF4672681EBACE12007DC0C0 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				BF9490001EBC14BC0035BC1E /* Factory */,
+				BF948FFD1EBC13D60035BC1E /* Service */,
+				BF948FF71EBC0C6C0035BC1E /* Transaction Result Observer */,
+				BF4672691EBACE37007DC0C0 /* Queue Observer */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		BF4672691EBACE37007DC0C0 /* Queue Observer */ = {
+			isa = PBXGroup;
+			children = (
+				BF46726A1EBACE48007DC0C0 /* PaymentQueueObserver.swift */,
+			);
+			name = "Queue Observer";
+			sourceTree = "<group>";
+		};
 		BF4FCA7F1EA9901700769889 /* Domain Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +400,30 @@
 				BF4FCA8B1EA9ABE900769889 /* CurrencyRepository.swift */,
 			);
 			name = Repository;
+			sourceTree = "<group>";
+		};
+		BF948FF71EBC0C6C0035BC1E /* Transaction Result Observer */ = {
+			isa = PBXGroup;
+			children = (
+				BF948FF81EBC0C870035BC1E /* PaymentTransactionResultObserver.swift */,
+			);
+			name = "Transaction Result Observer";
+			sourceTree = "<group>";
+		};
+		BF948FFD1EBC13D60035BC1E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BF948FFE1EBC13E80035BC1E /* PaymentService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		BF9490001EBC14BC0035BC1E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				BF9490011EBC14DB0035BC1E /* PaymentFactory.swift */,
+			);
+			name = Factory;
 			sourceTree = "<group>";
 		};
 		BFC10ACF1E038ACD006EAACE /* View */ = {
@@ -416,6 +467,7 @@
 		BFC6C81C1DFE2D900099CB00 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BF4672681EBACE12007DC0C0 /* Payment */,
 				BF4FCA881EA99F1700769889 /* Products */,
 				BF1EB8141E89EFE500E7CD52 /* In Game Currency */,
 				BFC6C8341DFE3E790099CB00 /* Game */,
@@ -812,11 +864,15 @@
 				BF46724E1EB625F8007DC0C0 /* ProductListTableViewController.swift in Sources */,
 				BF05328C1E00DE5600D89E9E /* SelectLetter.swift in Sources */,
 				BFC6C8411DFE3FAE0099CB00 /* GameFactory.swift in Sources */,
+				BF948FF91EBC0C870035BC1E /* PaymentTransactionResultObserver.swift in Sources */,
 				BFFACC1B1E0A0EA800444BAD /* ViewEmbedder.swift in Sources */,
 				BF4672441EB54AF7007DC0C0 /* ProductListPresenter.swift in Sources */,
+				BF948FFF1EBC13E80035BC1E /* PaymentService.swift in Sources */,
 				BFC10AD41E038D25006EAACE /* SaveGame.swift in Sources */,
 				BF4FCA821EA9906F00769889 /* ObjectAssociation.swift in Sources */,
 				BFF215291E0640290083DC7D /* GameInputLetterView.swift in Sources */,
+				BF9490021EBC14DB0035BC1E /* PaymentFactory.swift in Sources */,
+				BF46726B1EBACE48007DC0C0 /* PaymentQueueObserver.swift in Sources */,
 				BFC6C8481DFFA1DC0099CB00 /* GamePresenter.swift in Sources */,
 				BFC6C8371DFE3EA40099CB00 /* ResetGame.swift in Sources */,
 				BF4672301EB03DD5007DC0C0 /* ProductRepository.swift in Sources */,

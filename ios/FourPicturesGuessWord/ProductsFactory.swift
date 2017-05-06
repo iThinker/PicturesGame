@@ -21,6 +21,7 @@ class ProductsFactory {
     func listPresenter() -> ProductListPresenter {
         let presenter = ProductListPresenter()
         presenter.getProductList = self.getProductList()
+        presenter.paymentService = PaymentFactory.shared.service()
         return presenter
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        self.configure()
         self.configureStubs()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,7 +27,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func configureStubs() {
+    fileprivate func configure() {
+        self.configurePaymentObserving()
+        self.configureProgressHUD()
+    }
+    
+    fileprivate func configurePaymentObserving() {
+        PaymentTransactionResultObserver.shared.userCurrency = CurrencyFactory.sharedUserCurrency
+        PaymentTransactionResultObserver.shared.productRepository = ProductsFactory.shared.repository()
+        PaymentQueueObserver.shared.startObserving()
+    }
+    
+    fileprivate func configureProgressHUD() {
+        SVProgressHUD.setDefaultMaskType(.black)
+    }
+    
+    fileprivate func configureStubs() {
         CurrencyRepository.amount = 100
     }
 

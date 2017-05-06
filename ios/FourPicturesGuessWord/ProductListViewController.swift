@@ -26,12 +26,25 @@ class ProductListViewController: UIViewController {
     }
     
     fileprivate func configure() {
+        self.tableViewController.onSelectProduct = {
+            [unowned self]
+            product in
+            self.presenter.purchase(product)
+        }
         self.embed(self.tableViewController, in: self.tableViewContainer)
     }
 
 }
 
 extension ProductListViewController: ProductListPresentable {
+    
+    func showLoading(_ visible: Bool) {
+        visible ? SVProgressHUD.show() : SVProgressHUD.dismiss()
+    }
+
+    func showPurchaseSuccess() {
+        SVProgressHUD.showSuccess(withStatus: NSLocalizedString("Success!", comment: ""))
+    }
     
     func showProducts(_ products: [ProductListPresenter.PresentableModel]) {
         self.tableViewController.showProducts(products)

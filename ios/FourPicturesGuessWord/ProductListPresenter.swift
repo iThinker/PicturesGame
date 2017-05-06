@@ -13,6 +13,8 @@ protocol ProductListPresentable: class {
     
     func showProducts(_ products: [ProductListPresenter.PresentableModel])
     func showError(_ error: Error)
+    func showLoading(_ visible: Bool)
+    func showPurchaseSuccess()
     
 }
 
@@ -29,15 +31,39 @@ class ProductListPresenter {
     
     weak var presentable: ProductListPresentable!
     var getProductList: GetProductList!
+    var paymentService: PaymentService!
+    var onPurchaseComplete: (() -> Void)!
     
     fileprivate var products: [Product] = []
     
     func startPresentation() {
+        self.presentable.showLoading(true)
         self.getProductList.get().then { (products) -> Void in
             self.didGetProducts(products)
+            }.always {
+                self.presentable.showLoading(false)
             }.catch { (error) in
                 self.presentable.showError(error)
         }
+    }
+    
+    func purchase(_ presentableModel: PresentableModel) {
+        self.presentable.showLoading(true)
+        PaymentService.PurchaseCompleteDomainEvent.subscribe(observer: self) {
+            [unowned self]
+            (event) in
+            self.presentable.showLoading(false)
+            type(of: event).unsubscribe(observer: self)
+            if event.result.success {
+                self.presentable.showPurchaseSuccess()
+                self.onPurchaseComplete()
+            }
+            else if let error = event.result.error {
+                self.presentable.showError(error)
+            }
+        }
+        let product = self.products.first(where: { $0.id == presentableModel.id })!
+        self.paymentService.purchase(product)
     }
     
     //MARK: Private
