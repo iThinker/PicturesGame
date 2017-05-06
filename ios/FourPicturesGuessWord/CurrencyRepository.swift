@@ -7,17 +7,32 @@
 //
 
 import Foundation
+import SAMKeychain
 
 class CurrencyRepository {
     
-    static var amount = 0
+    private let CurrencyService = "com.fourpicturesguessword.currency"
+    private let CurrencyAccount = "currency"
     
     func getAmount() throws -> Int {
-        return CurrencyRepository.amount
+        var error: NSError?
+        let amountString = SAMKeychain.password(forService: CurrencyService, account: CurrencyAccount, error: &error)
+        let amount = Int(amountString ?? "") ?? 0
+        if let error = error {
+            if error.code != Int(errSecItemNotFound) {
+                throw error
+            }
+        }
+        
+        return amount
     }
     
     func setAmount(_ amount: Int) throws {
-        CurrencyRepository.amount = amount
+        var error: NSError?
+        SAMKeychain.setPassword("\(amount)", forService: CurrencyService, account: CurrencyAccount, error: &error)
+        if let error = error {
+            throw error
+        }
     }
     
 }
